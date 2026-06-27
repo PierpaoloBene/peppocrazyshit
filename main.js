@@ -505,9 +505,9 @@ function buildPieChart(categories) {
     datasets: [{
       data: categories.map(c => c.valore_miliardi),
       backgroundColor: categories.map(c => c.color),
-      borderWidth: 2,
-      borderColor: '#ffffff',
-      hoverOffset: 10,
+      borderWidth: 4,
+      borderColor: 'var(--bg)',
+      hoverOffset: 16,
       borderRadius: 4
     }]
   };
@@ -520,17 +520,7 @@ function buildPieChart(categories) {
       maintainAspectRatio: false,
       cutout: '65%',
       plugins: {
-        legend: {
-          display: true,
-          position: 'right',
-          labels: {
-            color: '#1a1a1a',
-            font: { family: 'Outfit, sans-serif', size: 13, weight: '500' },
-            padding: 20,
-            usePointStyle: true,
-            pointStyle: 'circle'
-          }
-        },
+        legend: { display: false },
         tooltip: {
           backgroundColor: 'rgba(0,0,0,0.8)',
           titleFont: { family: 'Outfit, sans-serif', size: 14 },

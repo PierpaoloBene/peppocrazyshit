@@ -129,20 +129,27 @@
         <div class="ticker-note">⚡ Simulazione di crescita live basata sui dati annuali ufficiali</div>
       </div>
 
-      <!-- Grafico grande al centro -->
-      <div class="chart-center-panel glass-card">
-        <h2 class="chart-title">Distribuzione della Spesa Pubblica</h2>
-        <div class="donut-container">
-          <canvas id="pil-chart" aria-label="Donut chart spesa pubblica italiana"></canvas>
+      <!-- Grafico e Breakdown in grid -->
+      <div class="pil-dashboard-grid">
+        <!-- Grafico grande al centro -->
+        <div class="chart-center-panel glass-card">
+          <h2 class="chart-title">Distribuzione della Spesa Pubblica</h2>
+          <div class="donut-container">
+            <canvas id="pil-chart" aria-label="Donut chart spesa pubblica italiana"></canvas>
+            <div class="donut-center-text" aria-hidden="true">
+              <span class="donut-val">1.21</span>
+              <span class="donut-lbl">Trilioni</span>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <!-- Breakdown sotto -->
-      <div class="pil-breakdown glass-card">
-        <h2 class="chart-title">Dettaglio per Categoria</h2>
-        <div id="pil-breakdown-list" class="breakdown-list"></div>
-        <div class="pil-source">
-          Dati: <a href="https://www.mef.gov.it/focus/La-Legge-di-Bilancio-2025/" target="_blank" rel="noopener" class="source-link">MEF — Legge di Bilancio 2025</a>
+        <!-- Breakdown sotto (ora a lato) -->
+        <div class="pil-breakdown glass-card">
+          <h2 class="chart-title">Dettaglio per Categoria</h2>
+          <div id="pil-breakdown-list" class="breakdown-list"></div>
+          <div class="pil-source">
+            Dati: <a href="https://www.mef.gov.it/focus/La-Legge-di-Bilancio-2025/" target="_blank" rel="noopener" class="source-link">MEF — Legge di Bilancio 2025</a>
+          </div>
         </div>
       </div>
 
@@ -161,14 +168,17 @@
   <!-- GLOBAL FOOTER -->
   <footer class="global-footer">
     <div class="footer-content">
-      <p class="disclaimer-text">
-        Tutti i dati riportati in questo sito, a scopo d'intrattenimento, potrebbero contenere imprecisioni o errori. Usali per guidare le chiacchierate al bar e non per decidere chi votare.
-      </p>
+      <div class="footer-text-col">
+        <div class="disclaimer-title">PeppoCrazyShit ☕</div>
+        <p class="disclaimer-text">
+          Tutti i dati riportati in questo sito, a scopo d'intrattenimento, potrebbero contenere imprecisioni o errori. Usali per guidare le chiacchierate al bar e non per decidere chi votare.
+        </p>
+      </div>
       
       <div class="donation-banner">
-        <p>I contenuti di questo sito sono gratuiti, ma richiedono tempo e token (più token che tempo)</p>
+        <p>I contenuti sono gratuiti, ma richiedono tempo e server.</p>
         <a href="https://paypal.me/pagapeppo" target="_blank" rel="noopener noreferrer" class="donate-btn">
-          Offrimi uno Spritz
+          <span>🍹</span> Offrimi uno Spritz
         </a>
       </div>
     </div>
