@@ -24,7 +24,7 @@
       "valore_miliardi": 195,
       "color": "#7209B7",
       "emoji": "🛒",
-      "desc": "Imposta sul Valore Aggiunto: è già inclusa nel prezzo di quasi tutto quello che compri, dal caffè al televisore."
+      "desc": "Imposta sul Valore Aggiunto: è già inclusa nel prezzo di quasi tutto quello che compri, dal 4% al 22% in base al tipo di bene o servizio . "
     },
     {
       "label": "Altre Imposte Indirette",
@@ -38,7 +38,7 @@
       "valore_miliardi": 68,
       "color": "#E67E22",
       "emoji": "⛽",
-      "desc": "Tasse su carburanti, tabacco, alcol ed energia: una parte importante del prezzo della benzina va allo Stato."
+      "desc": "Tasse su carburanti, tabacco, alcol ed energia."
     },
     {
       "label": "IRES",
