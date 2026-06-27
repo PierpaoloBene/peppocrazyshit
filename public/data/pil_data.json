@@ -1,20 +1,20 @@
 {
-  "year": 2026,
-  "total_pil": 2240,
-  "total_debt": 3100,
-  "total_spending": 1253.0,
+  "year": 2025,
+  "total_pil": 2180,
+  "total_debt": 2980,
+  "total_spending": 1210.0,
   "categories": [
-    { "label": "Pensioni e Previdenza", "valore_miliardi": 345, "color": "#FF007F", "emoji": "👴" },
-    { "label": "Sanità", "valore_miliardi": 140, "color": "#00E5FF", "emoji": "🏥" },
-    { "label": "Welfare & Sociale", "valore_miliardi": 125, "color": "#FFD700", "emoji": "🤝" },
-    { "label": "Istruzione", "valore_miliardi": 85, "color": "#39FF14", "emoji": "🎓" },
-    { "label": "Interessi sul Debito", "valore_miliardi": 95, "color": "#FF4500", "emoji": "💸" },
-    { "label": "Pubblica Amministrazione", "valore_miliardi": 60, "color": "#1ABC9C", "emoji": "🏛️" },
-    { "label": "Infrastrutture & Trasporti", "valore_miliardi": 55, "color": "#9B59B6", "emoji": "🚆" },
-    { "label": "Ambiente & Energia", "valore_miliardi": 45, "color": "#2ECC71", "emoji": "🌿" },
-    { "label": "Difesa", "valore_miliardi": 35, "color": "#E67E22", "emoji": "⚔️" },
-    { "label": "Altro", "valore_miliardi": 268, "color": "#7F8C8D", "emoji": "📦" }
+    { "label": "Pensioni e Previdenza", "valore_miliardi": 335, "color": "#FF007F", "emoji": "👴" },
+    { "label": "Sanità", "valore_miliardi": 136, "color": "#00E5FF", "emoji": "🏥" },
+    { "label": "Welfare & Sociale", "valore_miliardi": 120, "color": "#FFD700", "emoji": "🤝" },
+    { "label": "Istruzione", "valore_miliardi": 82, "color": "#39FF14", "emoji": "🎓" },
+    { "label": "Interessi sul Debito", "valore_miliardi": 90, "color": "#FF4500", "emoji": "💸" },
+    { "label": "Pubblica Amministrazione", "valore_miliardi": 58, "color": "#1ABC9C", "emoji": "🏛️" },
+    { "label": "Infrastrutture & Trasporti", "valore_miliardi": 52, "color": "#9B59B6", "emoji": "🚆" },
+    { "label": "Ambiente & Energia", "valore_miliardi": 42, "color": "#2ECC71", "emoji": "🌿" },
+    { "label": "Difesa", "valore_miliardi": 32, "color": "#E67E22", "emoji": "⚔️" },
+    { "label": "Altro", "valore_miliardi": 263, "color": "#7F8C8D", "emoji": "📦" }
   ],
-  "source": "MEF - Documento di Finanza Pubblica (DFP) 2026",
+  "source": "MEF - Documento Programmatico di Bilancio (DPB) 2025",
   "source_url": "https://www.mef.gov.it/it/atti-documenti/documenti-programmatici/"
 }
