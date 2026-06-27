@@ -18,7 +18,7 @@ const state = {
 const CARDS = [
   {
     id: 'supercazzola',
-    title: 'SuperCazzola\nIndex',
+    title: 'SuperCazzola\nIndex (WIP)',
     bg: '#FF595E',
     page: 'supercazzola',
   },
