@@ -177,6 +177,18 @@ main {
   color: var(--text-light);
 }
 
+/* Topbar source link — same look as page-updated but clickable */
+.source-topbar-link {
+  font-size: 0.74rem;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.source-topbar-link:hover {
+  color: var(--text-muted);
+  text-decoration: underline;
+}
+
 /* Hero: title + desc */
 .page-hero {
   margin-bottom: 1.75rem;
