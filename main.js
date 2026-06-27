@@ -300,7 +300,7 @@ function renderSamples(parties) {
 function highlightPhrases(text, phrases) {
   let result = escapeHtml(text);
   if (!phrases || phrases.length === 0) return result;
-  
+
   phrases.forEach(phrase => {
     // Escape phrase for regex, but allow for some whitespace variation
     const escapedPhrase = escapeRegex(phrase).replace(/\\s+/g, '\\s+');
@@ -367,9 +367,9 @@ async function loadWhashabit() {
     const baseData = await res.json();
 
     state.whashabitData = {
-      frontale:   baseData.frontale   || 0,
+      frontale: baseData.frontale || 0,
       posteriore: baseData.posteriore || 0,
-      altro:      baseData.altro      || 0,
+      altro: baseData.altro || 0,
     };
 
     renderWhashabit();
@@ -538,7 +538,7 @@ function buildPieChart(categories) {
           padding: 12,
           cornerRadius: 8,
           callbacks: {
-            label: function(context) {
+            label: function (context) {
               const label = context.label || '';
               const value = context.parsed || 0;
               return `${label}: €${value} Mrd`;
@@ -583,39 +583,45 @@ function startPilTicker() {
   const data = state.pilData;
   if (!data || pilTickerInterval) return;
 
-  // Calculate per-millisecond rates based on annual figures
+  // Calculate base values in euros
+  const BASE_GDP = data.total_pil * 1e9;
+  const DEBT_MS = data.total_debt * 1e9;
+  const BASE_SPEND = data.total_spending * 1e9;
+
   const MS_PER_YEAR = 365.25 * 24 * 60 * 60 * 1000;
-  const GDP_MS   = (data.total_pil * 1e9) / MS_PER_YEAR;    // €/ms
-  const DEBT_MS  = (data.total_debt * 1e9);              // starting point, debt grows ~2.5% per year
-  const SPEND_MS = (data.total_spending * 1e9) / MS_PER_YEAR;
+  
+  // Calculate per-millisecond growth (assuming 1% GDP growth, 2.5% debt, 1.5% spending)
+  const GDP_GROWTH_MS = (BASE_GDP * 0.01) / MS_PER_YEAR;
+  const DEBT_GROWTH_MS = (DEBT_MS * 0.025) / MS_PER_YEAR;
+  const SPEND_GROWTH_MS = (BASE_SPEND * 0.015) / MS_PER_YEAR;
 
-  // We start from a random offset within the current year to get a live "mid-year" value
+  // Offset within the current year for the live effect
   const yearStart = new Date(new Date().getFullYear(), 0, 1).getTime();
-  const elapsed = Date.now() - yearStart; // ms elapsed this year
+  const elapsed = Date.now() - yearStart; 
 
-  let gdp   = GDP_MS * elapsed;
-  let debt  = DEBT_MS + (DEBT_MS * 0.025 / MS_PER_YEAR) * elapsed;
-  let spend = SPEND_MS * elapsed;
+  let gdp = BASE_GDP + GDP_GROWTH_MS * elapsed;
+  let debt = DEBT_MS + DEBT_GROWTH_MS * elapsed;
+  let spend = BASE_SPEND + SPEND_GROWTH_MS * elapsed;
 
-  const gdpEl   = $('#gdp-ticker');
-  const debtEl  = $('#debt-ticker');
+  const gdpEl = $('#gdp-ticker');
+  const debtEl = $('#debt-ticker');
   const spendEl = $('#spend-ticker');
 
   function fmt(n) {
     if (n >= 1e12) return `€ ${(n / 1e12).toFixed(3)} Tri`;
-    if (n >= 1e9)  return `€ ${(n / 1e9).toFixed(2)} Mrd`;
-    if (n >= 1e6)  return `€ ${(n / 1e6).toFixed(1)} Mln`;
+    if (n >= 1e9) return `€ ${(n / 1e9).toFixed(2)} Mrd`;
+    if (n >= 1e6) return `€ ${(n / 1e6).toFixed(1)} Mln`;
     return `€ ${Math.round(n).toLocaleString('it-IT')}`;
   }
 
   const TICK_MS = 100;
   pilTickerInterval = setInterval(() => {
-    gdp   += GDP_MS * TICK_MS;
-    debt  += (DEBT_MS * 0.025 / MS_PER_YEAR) * TICK_MS;
-    spend += SPEND_MS * TICK_MS;
+    gdp += GDP_GROWTH_MS * TICK_MS;
+    debt += DEBT_GROWTH_MS * TICK_MS;
+    spend += SPEND_GROWTH_MS * TICK_MS;
 
-    if (gdpEl)   gdpEl.textContent   = fmt(gdp);
-    if (debtEl)  debtEl.textContent  = fmt(debt);
+    if (gdpEl) gdpEl.textContent = fmt(gdp);
+    if (debtEl) debtEl.textContent = fmt(debt);
     if (spendEl) spendEl.textContent = fmt(spend);
   }, TICK_MS);
 }
