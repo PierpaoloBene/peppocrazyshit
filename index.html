@@ -129,32 +129,29 @@
         <div class="ticker-note">⚡ Simulazione di crescita live basata sui dati annuali ufficiali</div>
       </div>
 
-      <!-- Grafico e Breakdown in grid -->
+      <!-- Entrate e Uscite in grid -->
       <div class="pil-dashboard-grid">
-        <!-- Grafico grande al centro -->
-        <div class="chart-center-panel glass-card">
-          <h2 class="chart-title">Distribuzione della Spesa Pubblica</h2>
-          <div class="pil-chart-wrapper">
-            <div class="donut-container">
-              <canvas id="pil-chart" aria-label="Donut chart spesa pubblica italiana"></canvas>
-              <div class="donut-center-text" aria-hidden="true">
-                <span class="donut-val">1.21</span>
-                <span class="donut-lbl">Trilioni</span>
-              </div>
-            </div>
-            <div id="pil-chart-legend" class="pil-legend" role="list" aria-label="Legenda categorie spesa"></div>
+
+        <!-- SINISTRA: Entrate -->
+        <div class="pil-breakdown glass-card">
+          <h2 class="chart-title">💰 Entrate dello Stato</h2>
+          <div id="pil-revenues-list" class="breakdown-list"></div>
+          <div class="pil-source">
+            Dati: <a href="https://www.rgs.mef.gov.it/VERSIONE-I/attivita_istituzionali/formazione_e_gestione_del_bilancio/bilancio_di_previsione/index.html" target="_blank" rel="noopener" class="source-link">RGS/MEF — Bilancio di Previsione 2025-2027</a>
           </div>
         </div>
 
-        <!-- Breakdown sotto (ora a lato) -->
+        <!-- DESTRA: Uscite -->
         <div class="pil-breakdown glass-card">
-          <h2 class="chart-title">Dettaglio per Categoria</h2>
+          <h2 class="chart-title">💸 Spesa Pubblica</h2>
           <div id="pil-breakdown-list" class="breakdown-list"></div>
           <div class="pil-source">
             Dati: <a href="https://www.rgs.mef.gov.it/VERSIONE-I/attivita_istituzionali/formazione_e_gestione_del_bilancio/bilancio_di_previsione/index.html" target="_blank" rel="noopener" class="source-link">RGS/MEF — Bilancio di Previsione 2025-2027</a>
           </div>
         </div>
+
       </div>
+
 
     </section>
 

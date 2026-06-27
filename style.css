@@ -566,6 +566,35 @@ main {
 .breakdown-value { font-size: 0.74rem; color: var(--text-muted); }
 .breakdown-bar-wrap { width: 55px; height: 4px; background: #f0f0f0; border-radius: 2px; overflow: hidden; flex-shrink: 0; }
 .breakdown-bar { height: 100%; border-radius: 2px; transition: width 1s ease; }
+.breakdown-pct { font-size: 0.78rem; font-weight: 700; min-width: 3.5ch; text-align: right; flex-shrink: 0; }
+
+/* Items with a tooltip get a "help" cursor */
+.breakdown-item.has-tip { cursor: help; }
+.breakdown-item.has-tip:hover { background: var(--bg-soft); }
+
+/* ─── Floating tooltip ─── */
+.pil-hover-tooltip {
+  position: fixed;
+  z-index: 9999;
+  max-width: 260px;
+  background: #111111;
+  color: #f0f0f0;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  padding: 0.55rem 0.8rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 140ms ease, transform 140ms ease;
+}
+.pil-hover-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .pil-source {
   margin-top: 0.85rem;
@@ -576,6 +605,7 @@ main {
 }
 .source-link { color: var(--accent, #4361EE); text-decoration: none; }
 .source-link:hover { text-decoration: underline; }
+
 
 /* =========================================
    GLOBAL FOOTER

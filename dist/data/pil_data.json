@@ -3,17 +3,143 @@
   "total_pil": 2180,
   "total_debt": 2980,
   "total_spending": 1210.0,
+  "total_revenues": 1100,
+  "revenues": [
+    {
+      "label": "Contributi Sociali",
+      "valore_miliardi": 295,
+      "color": "#4361EE",
+      "emoji": "🤝",
+      "desc": "Versati da lavoratori e datori di lavoro: finanziano pensioni, malattia e disoccupazione (INPS)."
+    },
+    {
+      "label": "IRPEF",
+      "valore_miliardi": 235,
+      "color": "#3A0CA3",
+      "emoji": "👤",
+      "desc": "Imposta sul reddito delle persone fisiche: la pagano lavoratori dipendenti, autonomi e pensionati in base a quanto guadagnano."
+    },
+    {
+      "label": "IVA",
+      "valore_miliardi": 195,
+      "color": "#7209B7",
+      "emoji": "🛒",
+      "desc": "Imposta sul Valore Aggiunto: è già inclusa nel prezzo di quasi tutto quello che compri, dal caffè al televisore."
+    },
+    {
+      "label": "Altre Imposte Indirette",
+      "valore_miliardi": 85,
+      "color": "#27AE60",
+      "emoji": "🏠",
+      "desc": "IMU, bollo auto, imposta di registro, successioni, concessioni: tasse su patrimoni, atti e beni."
+    },
+    {
+      "label": "Accise & Consumi",
+      "valore_miliardi": 68,
+      "color": "#E67E22",
+      "emoji": "⛽",
+      "desc": "Tasse su carburanti, tabacco, alcol ed energia: una parte importante del prezzo della benzina va allo Stato."
+    },
+    {
+      "label": "IRES",
+      "valore_miliardi": 50,
+      "color": "#F72585",
+      "emoji": "🏢",
+      "desc": "Imposta sul reddito delle società: la pagano le aziende sulla base degli utili che realizzano."
+    },
+    {
+      "label": "Altre Imposte Dirette",
+      "valore_miliardi": 45,
+      "color": "#16A085",
+      "emoji": "💹",
+      "desc": "Cedolare secca sugli affitti, imposta sulle rendite finanziarie, capital gain e altri tributi diretti minori."
+    },
+    {
+      "label": "Entrate Patrimoniali",
+      "valore_miliardi": 47,
+      "color": "#2980B9",
+      "emoji": "🏛️",
+      "desc": "Affitti di immobili pubblici, dividendi da partecipazioni dello Stato in aziende (ENI, Poste, ecc.)."
+    },
+    {
+      "label": "Altre Entrate",
+      "valore_miliardi": 80,
+      "color": "#95A5A6",
+      "emoji": "📋",
+      "desc": "Sanzioni, multe, trasferimenti dall'Unione Europea, proventi vari e entrate non tributarie."
+    }
+  ],
   "categories": [
-    { "label": "Pensioni e Previdenza", "valore_miliardi": 335, "color": "#FF007F", "emoji": "👴" },
-    { "label": "Sanità", "valore_miliardi": 136, "color": "#00E5FF", "emoji": "🏥" },
-    { "label": "Welfare & Sociale", "valore_miliardi": 120, "color": "#FFD700", "emoji": "🤝" },
-    { "label": "Istruzione", "valore_miliardi": 82, "color": "#39FF14", "emoji": "🎓" },
-    { "label": "Interessi sul Debito", "valore_miliardi": 90, "color": "#FF4500", "emoji": "💸" },
-    { "label": "Pubblica Amministrazione", "valore_miliardi": 58, "color": "#1ABC9C", "emoji": "🏛️" },
-    { "label": "Infrastrutture & Trasporti", "valore_miliardi": 52, "color": "#9B59B6", "emoji": "🚆" },
-    { "label": "Ambiente & Energia", "valore_miliardi": 42, "color": "#2ECC71", "emoji": "🌿" },
-    { "label": "Difesa", "valore_miliardi": 32, "color": "#E67E22", "emoji": "⚔️" },
-    { "label": "Altro", "valore_miliardi": 263, "color": "#7F8C8D", "emoji": "📦" }
+    {
+      "label": "Pensioni e Previdenza",
+      "valore_miliardi": 335,
+      "color": "#FF007F",
+      "emoji": "👴",
+      "desc": "La voce più grande del bilancio: pensioni di vecchiaia, invalidità, reversibilità e ammortizzatori sociali (cassa integrazione, NASpI)."
+    },
+    {
+      "label": "Sanità",
+      "valore_miliardi": 136,
+      "color": "#00E5FF",
+      "emoji": "🏥",
+      "desc": "Finanziamento del Servizio Sanitario Nazionale: ospedali, medici di base, farmaci e prevenzione."
+    },
+    {
+      "label": "Welfare & Sociale",
+      "valore_miliardi": 120,
+      "color": "#FFD700",
+      "emoji": "🤲",
+      "desc": "Sussidi alle famiglie, assegno unico per i figli, reddito di cittadinanza (poi Adi), bonus sociali."
+    },
+    {
+      "label": "Istruzione",
+      "valore_miliardi": 82,
+      "color": "#39FF14",
+      "emoji": "🎓",
+      "desc": "Stipendi degli insegnanti, università, asili nido e finanziamento di scuole pubbliche di ogni ordine e grado."
+    },
+    {
+      "label": "Interessi sul Debito",
+      "valore_miliardi": 90,
+      "color": "#FF4500",
+      "emoji": "💸",
+      "desc": "Costo annuo del debito pubblico: quello che lo Stato paga agli acquirenti di BTP e altri titoli. Più del doppio della spesa per l'istruzione."
+    },
+    {
+      "label": "Pubblica Amministrazione",
+      "valore_miliardi": 58,
+      "color": "#1ABC9C",
+      "emoji": "🏛️",
+      "desc": "Stipendi dei dipendenti pubblici (esclusi sanità e istruzione), ministeri, enti locali e funzionamento dello Stato."
+    },
+    {
+      "label": "Infrastrutture & Trasporti",
+      "valore_miliardi": 52,
+      "color": "#9B59B6",
+      "emoji": "🚆",
+      "desc": "Autostrade, ferrovie, porti e aeroporti: investimenti e sussidi per costruire e mantenere le infrastrutture italiane."
+    },
+    {
+      "label": "Ambiente & Energia",
+      "valore_miliardi": 42,
+      "color": "#2ECC71",
+      "emoji": "🌿",
+      "desc": "Sussidi alle energie rinnovabili, incentivi per efficienza energetica (Superbonus), tutela ambientale e PNRR verde."
+    },
+    {
+      "label": "Difesa",
+      "valore_miliardi": 32,
+      "color": "#E67E22",
+      "emoji": "⚔️",
+      "desc": "Forze armate, acquisto di equipaggiamenti militari e contributi alle missioni NATO e UE."
+    },
+    {
+      "label": "Altro",
+      "valore_miliardi": 263,
+      "color": "#7F8C8D",
+      "emoji": "📦",
+      "desc": "Giustizia, cultura, ricerca, agricoltura, debiti pregressi e spese varie non classificabili nelle altre categorie."
+    }
   ],
   "source": "RGS/MEF - Bilancio di Previsione 2025-2027",
   "source_url": "https://www.rgs.mef.gov.it/VERSIONE-I/attivita_istituzionali/formazione_e_gestione_del_bilancio/bilancio_di_previsione/index.html"

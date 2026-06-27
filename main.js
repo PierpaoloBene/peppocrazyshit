@@ -491,83 +491,76 @@ async function loadPil() {
 
 function renderPil() {
   const data = state.pilData;
-  buildPieChart(data.categories);
-  renderPilLegend(data.categories);
+  renderRevenuesList(data);
   renderBreakdownList(data);
 }
 
-function buildPieChart(categories) {
-  const ctx = $('#pil-chart');
-  if (!ctx) return;
-  if (state.charts.pie) { state.charts.pie.destroy(); }
-
-  const total = categories.reduce((s, c) => s + c.valore_miliardi, 0);
-
-  const data = {
-    labels: categories.map(c => c.label),
-    datasets: [{
-      data: categories.map(c => c.valore_miliardi),
-      backgroundColor: categories.map(c => c.color),
-      borderWidth: 3,
-      borderColor: '#ffffff',
-      hoverOffset: 12,
-      hoverBorderWidth: 0,
-    }]
-  };
-
-  const config = {
-    type: 'doughnut',
-    data: data,
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      cutout: '68%',
-      animation: { duration: 700, easing: 'easeOutQuart' },
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          backgroundColor: '#111111',
-          borderColor: '#333333',
-          borderWidth: 1,
-          titleColor: '#ffffff',
-          titleFont: { family: "'Inter', sans-serif", size: 12 },
-          bodyColor: '#cccccc',
-          bodyFont: { family: "'Inter', sans-serif", size: 12, weight: '600' },
-          padding: 10,
-          cornerRadius: 8,
-          callbacks: {
-            label: function (context) {
-              const value = context.parsed || 0;
-              const pct = ((value / total) * 100).toFixed(1);
-              return ` €${value} Mrd (${pct}%)`;
-            }
-          }
-        }
-      }
-    }
-  };
-
-  state.charts.pie = new Chart(ctx, config);
+// ─── Floating tooltip singleton ───
+let _tooltip = null;
+function getTooltip() {
+  if (!_tooltip) {
+    _tooltip = document.createElement('div');
+    _tooltip.className = 'pil-hover-tooltip';
+    _tooltip.setAttribute('role', 'tooltip');
+    document.body.appendChild(_tooltip);
+  }
+  return _tooltip;
 }
 
-function renderPilLegend(categories) {
-  const container = $('#pil-chart-legend');
+function attachTooltip(el, text) {
+  const tip = getTooltip();
+  el.addEventListener('mouseenter', (e) => {
+    tip.textContent = text;
+    tip.classList.add('visible');
+    positionTooltip(e);
+  });
+  el.addEventListener('mousemove', positionTooltip);
+  el.addEventListener('mouseleave', () => {
+    tip.classList.remove('visible');
+  });
+}
+
+function positionTooltip(e) {
+  const tip = getTooltip();
+  const GAP = 12;
+  const tw = tip.offsetWidth;
+  const th = tip.offsetHeight;
+  let x = e.clientX + GAP;
+  let y = e.clientY - th / 2;
+  // Keep within viewport
+  if (x + tw > window.innerWidth - 8) x = e.clientX - tw - GAP;
+  if (y < 8) y = 8;
+  if (y + th > window.innerHeight - 8) y = window.innerHeight - th - 8;
+  tip.style.left = x + 'px';
+  tip.style.top  = y + 'px';
+}
+
+function renderRevenuesList(data) {
+  const container = $('#pil-revenues-list');
   if (!container) return;
   container.innerHTML = '';
 
-  const total = categories.reduce((s, c) => s + c.valore_miliardi, 0);
+  const items = data.revenues || [];
+  const total = items.reduce((s, c) => s + c.valore_miliardi, 0);
 
-  categories.forEach(cat => {
+  items.forEach(cat => {
     const pct = ((cat.valore_miliardi / total) * 100).toFixed(1);
-    const item = document.createElement('div');
-    item.className = 'pil-legend-item';
-    item.setAttribute('role', 'listitem');
-    item.innerHTML = `
-      <span class="pil-legend-dot" style="background: ${cat.color}"></span>
-      <span class="pil-legend-label" title="${cat.label}">${cat.emoji} ${cat.label}</span>
-      <span class="pil-legend-pct">${pct}%</span>
+    const div = document.createElement('div');
+    div.className = 'breakdown-item';
+    if (cat.desc) div.classList.add('has-tip');
+    div.innerHTML = `
+      <span class="breakdown-emoji">${cat.emoji}</span>
+      <div class="breakdown-info">
+        <div class="breakdown-label">${cat.label}</div>
+        <div class="breakdown-value">€${cat.valore_miliardi} Mrd</div>
+      </div>
+      <div class="breakdown-bar-wrap">
+        <div class="breakdown-bar" style="width: ${pct}%; background: ${cat.color}"></div>
+      </div>
+      <span class="breakdown-pct" style="color: ${cat.color}">${pct}%</span>
     `;
-    container.appendChild(item);
+    if (cat.desc) attachTooltip(div, cat.desc);
+    container.appendChild(div);
   });
 }
 
@@ -582,6 +575,7 @@ function renderBreakdownList(data) {
     const pct = ((cat.valore_miliardi / total) * 100).toFixed(1);
     const div = document.createElement('div');
     div.className = 'breakdown-item';
+    if (cat.desc) div.classList.add('has-tip');
     div.innerHTML = `
       <span class="breakdown-emoji">${cat.emoji}</span>
       <div class="breakdown-info">
@@ -591,11 +585,13 @@ function renderBreakdownList(data) {
       <div class="breakdown-bar-wrap">
         <div class="breakdown-bar" style="width: ${pct}%; background: ${cat.color}"></div>
       </div>
-      <span style="font-family: var(--font-mono); font-size: 0.78rem; color: ${cat.color}; min-width: 3.5ch; text-align: right">${pct}%</span>
+      <span class="breakdown-pct" style="color: ${cat.color}">${pct}%</span>
     `;
+    if (cat.desc) attachTooltip(div, cat.desc);
     container.appendChild(div);
   });
 }
+
 
 let pilTickerInterval = null;
 function startPilTicker() {
