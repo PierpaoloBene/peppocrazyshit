@@ -482,6 +482,71 @@ main {
 .source-link { color: var(--accent, #4361EE); text-decoration: none; }
 .source-link:hover { text-decoration: underline; }
 
+/* =========================================
+   GLOBAL FOOTER
+========================================= */
+.global-footer {
+  margin-top: 5rem;
+  padding: 4rem 2rem 2rem;
+  background-color: var(--bg-color);
+  border-top: 1px dashed var(--border-color);
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.disclaimer-text {
+  font-size: 0.95rem;
+  color: #888;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+.donation-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0;
+  background-color: transparent;
+}
+
+.donation-banner p {
+  font-size: 0.95rem;
+  color: #666;
+  text-wrap: balance;
+}
+
+.donate-btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #fff;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 2px solid var(--border-color);
+  box-shadow: 2px 2px 0px var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.donate-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--border-color);
+}
+
+.donate-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--border-color);
+}
+
 /* ══════════════════════════════════
    VISITOR WIDGET
 ══════════════════════════════════ */

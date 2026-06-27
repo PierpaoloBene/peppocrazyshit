@@ -504,7 +504,7 @@ function renderPil() {
 }
 
 function buildPieChart(categories) {
-  const ctx = $('#pie-chart');
+  const ctx = $('#pil-chart');
   if (!ctx) return;
   if (state.charts.pie) { state.charts.pie.destroy(); }
 
