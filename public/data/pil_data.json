@@ -1,20 +1,20 @@
 {
-  "year": 2024,
-  "total_spesa_miliardi": 1070,
-  "gdp_annuo_miliardi": 2089,
-  "debito_pubblico_miliardi": 2870,
+  "year": 2026,
+  "total_pil": 2240,
+  "total_debt": 3100,
+  "total_spending": 1253.0,
   "categories": [
-    { "label": "Pensioni e Previdenza", "valore_miliardi": 316, "color": "#FF007F", "emoji": "👴" },
-    { "label": "Sanità", "valore_miliardi": 134, "color": "#00E5FF", "emoji": "🏥" },
-    { "label": "Istruzione", "valore_miliardi": 79, "color": "#39FF14", "emoji": "🎓" },
-    { "label": "Interessi sul Debito", "valore_miliardi": 84, "color": "#FF4500", "emoji": "💸" },
-    { "label": "Welfare & Sociale", "valore_miliardi": 118, "color": "#FFD700", "emoji": "🤝" },
-    { "label": "Infrastrutture & Trasporti", "valore_miliardi": 47, "color": "#9B59B6", "emoji": "🚆" },
-    { "label": "Difesa", "valore_miliardi": 32, "color": "#E67E22", "emoji": "⚔️" },
-    { "label": "Pubblica Amministrazione", "valore_miliardi": 55, "color": "#1ABC9C", "emoji": "🏛️" },
-    { "label": "Ambiente & Energia", "valore_miliardi": 38, "color": "#2ECC71", "emoji": "🌿" },
-    { "label": "Altro", "valore_miliardi": 167, "color": "#7F8C8D", "emoji": "📦" }
+    { "label": "Pensioni e Previdenza", "valore_miliardi": 345, "color": "#FF007F", "emoji": "👴" },
+    { "label": "Sanità", "valore_miliardi": 140, "color": "#00E5FF", "emoji": "🏥" },
+    { "label": "Welfare & Sociale", "valore_miliardi": 125, "color": "#FFD700", "emoji": "🤝" },
+    { "label": "Istruzione", "valore_miliardi": 85, "color": "#39FF14", "emoji": "🎓" },
+    { "label": "Interessi sul Debito", "valore_miliardi": 95, "color": "#FF4500", "emoji": "💸" },
+    { "label": "Pubblica Amministrazione", "valore_miliardi": 60, "color": "#1ABC9C", "emoji": "🏛️" },
+    { "label": "Infrastrutture & Trasporti", "valore_miliardi": 55, "color": "#9B59B6", "emoji": "🚆" },
+    { "label": "Ambiente & Energia", "valore_miliardi": 45, "color": "#2ECC71", "emoji": "🌿" },
+    { "label": "Difesa", "valore_miliardi": 35, "color": "#E67E22", "emoji": "⚔️" },
+    { "label": "Altro", "valore_miliardi": 268, "color": "#7F8C8D", "emoji": "📦" }
   ],
-  "source": "ISTAT / Banca d'Italia / MEF - Legge di Bilancio 2024",
+  "source": "MEF - Documento di Finanza Pubblica (DFP) 2026",
   "source_url": "https://www.mef.gov.it/it/atti-documenti/documenti-programmatici/"
 }

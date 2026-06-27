@@ -499,56 +499,65 @@ async function loadPil() {
 
 function renderPil() {
   const data = state.pilData;
-  buildPilChart(data);
+  buildPieChart(data.categories);
   renderBreakdownList(data);
 }
 
-function buildPilChart(data) {
-  const ctx = $('#pil-chart');
+function buildPieChart(categories) {
+  const ctx = $('#pie-chart');
   if (!ctx) return;
-  if (state.charts.pil) { state.charts.pil.destroy(); }
+  if (state.charts.pie) { state.charts.pie.destroy(); }
 
-  const labels = data.categories.map(c => c.label);
-  const values = data.categories.map(c => c.valore_miliardi);
-  const colors = data.categories.map(c => c.color);
-  const bgs    = colors.map(c => hexToRgba(c, 0.75));
+  const data = {
+    labels: categories.map(c => c.label),
+    datasets: [{
+      data: categories.map(c => c.valore_miliardi),
+      backgroundColor: categories.map(c => c.color),
+      borderWidth: 2,
+      borderColor: '#ffffff',
+      hoverOffset: 10,
+      borderRadius: 4
+    }]
+  };
 
-  state.charts.pil = new Chart(ctx, {
+  const config = {
     type: 'doughnut',
-    data: {
-      labels,
-      datasets: [{
-        data: values,
-        backgroundColor: bgs,
-        borderColor: colors,
-        borderWidth: 2,
-        hoverOffset: 16,
-      }],
-    },
+    data: data,
     options: {
       responsive: true,
-      maintainAspectRatio: true,
-      cutout: '62%',
-      animation: { duration: 1000, easing: 'easeOutQuart' },
+      maintainAspectRatio: false,
+      cutout: '65%',
       plugins: {
-        legend: { display: false },
-        tooltip: {
-          backgroundColor: '#1a1a1a',
-          borderColor: '#333333',
-          borderWidth: 1,
-          titleColor: '#ffffff',
-          bodyColor: '#cccccc',
-          callbacks: {
-            label: (ctx) => {
-              const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
-              const pct = ((ctx.raw / total) * 100).toFixed(1);
-              return ` €${ctx.raw}Mrd (${pct}%)`;
-            },
-          },
+        legend: {
+          display: true,
+          position: 'right',
+          labels: {
+            color: '#1a1a1a',
+            font: { family: 'Outfit, sans-serif', size: 13, weight: '500' },
+            padding: 20,
+            usePointStyle: true,
+            pointStyle: 'circle'
+          }
         },
-      },
-    },
-  });
+        tooltip: {
+          backgroundColor: 'rgba(0,0,0,0.8)',
+          titleFont: { family: 'Outfit, sans-serif', size: 14 },
+          bodyFont: { family: 'Outfit, sans-serif', size: 14, weight: 'bold' },
+          padding: 12,
+          cornerRadius: 8,
+          callbacks: {
+            label: function(context) {
+              const label = context.label || '';
+              const value = context.parsed || 0;
+              return `${label}: €${value} Mrd`;
+            }
+          }
+        }
+      }
+    }
+  };
+
+  state.charts.pie = new Chart(ctx, config);
 }
 
 function renderBreakdownList(data) {
@@ -584,9 +593,9 @@ function startPilTicker() {
 
   // Calculate per-millisecond rates based on annual figures
   const MS_PER_YEAR = 365.25 * 24 * 60 * 60 * 1000;
-  const GDP_MS   = (data.gdp_annuo_miliardi * 1e9) / MS_PER_YEAR;    // €/ms
-  const DEBT_MS  = (data.debito_pubblico_miliardi * 1e9);              // starting point, debt grows ~2.5% per year
-  const SPEND_MS = (data.total_spesa_miliardi * 1e9) / MS_PER_YEAR;
+  const GDP_MS   = (data.total_pil * 1e9) / MS_PER_YEAR;    // €/ms
+  const DEBT_MS  = (data.total_debt * 1e9);              // starting point, debt grows ~2.5% per year
+  const SPEND_MS = (data.total_spending * 1e9) / MS_PER_YEAR;
 
   // We start from a random offset within the current year to get a live "mid-year" value
   const yearStart = new Date(new Date().getFullYear(), 0, 1).getTime();
