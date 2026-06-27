@@ -540,29 +540,52 @@ function renderRevenuesList(data) {
   if (!container) return;
   container.innerHTML = '';
 
-  const items = data.revenues || [];
-  const total = items.reduce((s, c) => s + c.valore_miliardi, 0);
+  const items    = data.revenues || [];
+  const groups   = data.revenue_groups || [];
+  const total    = items.reduce((s, c) => s + c.valore_miliardi, 0);
 
-  items.forEach(cat => {
-    const pct = ((cat.valore_miliardi / total) * 100).toFixed(1);
-    const div = document.createElement('div');
-    div.className = 'breakdown-item';
-    if (cat.desc) div.classList.add('has-tip');
-    div.innerHTML = `
-      <span class="breakdown-emoji">${cat.emoji}</span>
-      <div class="breakdown-info">
-        <div class="breakdown-label">${cat.label}</div>
-        <div class="breakdown-value">€${cat.valore_miliardi} Mrd</div>
-      </div>
-      <div class="breakdown-bar-wrap">
-        <div class="breakdown-bar" style="width: ${pct}%; background: ${cat.color}"></div>
-      </div>
-      <span class="breakdown-pct" style="color: ${cat.color}">${pct}%</span>
+  groups.forEach((group, idx) => {
+    const groupItems = items.filter(c => c.group === group.key);
+
+    // ── Group separator header ──
+    const header = document.createElement('div');
+    header.className = 'revenue-group-header' + (idx > 0 ? ' revenue-group-header--mt' : '');
+    header.innerHTML = `
+      <span class="revenue-group-label">${group.label}</span>
+      <span class="revenue-group-desc">${group.desc}</span>
     `;
-    if (cat.desc) attachTooltip(div, cat.desc);
-    container.appendChild(div);
+    container.appendChild(header);
+
+    if (groupItems.length === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'revenue-group-empty';
+      empty.textContent = 'Dati non riportati separatamente in questo bilancio semplificato.';
+      container.appendChild(empty);
+      return;
+    }
+
+    groupItems.forEach(cat => {
+      const pct = ((cat.valore_miliardi / total) * 100).toFixed(1);
+      const div = document.createElement('div');
+      div.className = 'breakdown-item';
+      if (cat.desc) div.classList.add('has-tip');
+      div.innerHTML = `
+        <span class="breakdown-emoji">${cat.emoji}</span>
+        <div class="breakdown-info">
+          <div class="breakdown-label">${cat.label}</div>
+          <div class="breakdown-value">€${cat.valore_miliardi} Mrd</div>
+        </div>
+        <div class="breakdown-bar-wrap">
+          <div class="breakdown-bar" style="width: ${pct}%; background: ${cat.color}"></div>
+        </div>
+        <span class="breakdown-pct" style="color: ${cat.color}">${pct}%</span>
+      `;
+      if (cat.desc) attachTooltip(div, cat.desc);
+      container.appendChild(div);
+    });
   });
 }
+
 
 function renderBreakdownList(data) {
   const container = $('#pil-breakdown-list');

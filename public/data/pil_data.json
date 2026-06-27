@@ -4,19 +4,35 @@
   "total_debt": 2980,
   "total_spending": 1210.0,
   "total_revenues": 1100,
-  "revenues": [
+  "revenue_groups": [
     {
-      "label": "Contributi Sociali",
-      "valore_miliardi": 295,
-      "color": "#4361EE",
-      "emoji": "🤝",
-      "desc": "Versati da lavoratori e datori di lavoro: finanziano pensioni, malattia e disoccupazione (INPS)."
+      "key": "tributarie",
+      "label": "Titolo I — Tributarie",
+      "desc": "Imposte e tasse riscosse direttamente dallo Stato su redditi, consumi e patrimoni."
     },
+    {
+      "key": "extra-tributarie",
+      "label": "Titolo II — Extra-Tributarie",
+      "desc": "Entrate non fiscali: contributi previdenziali, proventi di servizi pubblici, sanzioni e trasferimenti."
+    },
+    {
+      "key": "alienazioni",
+      "label": "Titolo III — Alienazioni & Riscossioni",
+      "desc": "Entrate da alienazione e ammortamento di beni patrimoniali e riscossione di crediti."
+    },
+    {
+      "key": "prestiti",
+      "label": "Titolo IV — Accensione di Prestiti",
+      "desc": "Nuovo debito emesso (BTP, BOT, CCT) per coprire il disavanzo tra entrate correnti e spese. Non è entrata «reale»: si somma al debito pubblico."
+    }
+  ],
+  "revenues": [
     {
       "label": "IRPEF",
       "valore_miliardi": 235,
       "color": "#3A0CA3",
       "emoji": "👤",
+      "group": "tributarie",
       "desc": "Imposta sul reddito delle persone fisiche: la pagano lavoratori dipendenti, autonomi e pensionati in base a quanto guadagnano."
     },
     {
@@ -24,13 +40,15 @@
       "valore_miliardi": 195,
       "color": "#7209B7",
       "emoji": "🛒",
-      "desc": "Imposta sul Valore Aggiunto: è già inclusa nel prezzo di quasi tutto quello che compri, dal 4% al 22% in base al tipo di bene o servizio . "
+      "group": "tributarie",
+      "desc": "Imposta sul Valore Aggiunto: è già inclusa nel prezzo di quasi tutto quello che compri, dal 4% al 22% in base al tipo di bene o servizio."
     },
     {
       "label": "Altre Imposte Indirette",
       "valore_miliardi": 85,
       "color": "#27AE60",
       "emoji": "🏠",
+      "group": "tributarie",
       "desc": "IMU, bollo auto, imposta di registro, successioni, concessioni: tasse su patrimoni, atti e beni."
     },
     {
@@ -38,6 +56,7 @@
       "valore_miliardi": 68,
       "color": "#E67E22",
       "emoji": "⛽",
+      "group": "tributarie",
       "desc": "Tasse su carburanti, tabacco, alcol ed energia."
     },
     {
@@ -45,6 +64,7 @@
       "valore_miliardi": 50,
       "color": "#F72585",
       "emoji": "🏢",
+      "group": "tributarie",
       "desc": "Imposta sul reddito delle società: la pagano le aziende sulla base degli utili che realizzano."
     },
     {
@@ -52,23 +72,35 @@
       "valore_miliardi": 45,
       "color": "#16A085",
       "emoji": "💹",
+      "group": "tributarie",
       "desc": "Cedolare secca sugli affitti, imposta sulle rendite finanziarie, capital gain e altri tributi diretti minori."
     },
     {
-      "label": "Entrate Patrimoniali",
-      "valore_miliardi": 47,
-      "color": "#2980B9",
-      "emoji": "🏛️",
-      "desc": "Affitti di immobili pubblici, dividendi da partecipazioni dello Stato in aziende (ENI, Poste, ecc.)."
+      "label": "Contributi Sociali",
+      "valore_miliardi": 295,
+      "color": "#4361EE",
+      "emoji": "🤝",
+      "group": "extra-tributarie",
+      "desc": "Versati da lavoratori e datori di lavoro: finanziano pensioni, malattia e disoccupazione (INPS)."
     },
     {
       "label": "Altre Entrate",
       "valore_miliardi": 80,
       "color": "#95A5A6",
       "emoji": "📋",
+      "group": "extra-tributarie",
       "desc": "Sanzioni, multe, trasferimenti dall'Unione Europea, proventi vari e entrate non tributarie."
+    },
+    {
+      "label": "Entrate Patrimoniali",
+      "valore_miliardi": 47,
+      "color": "#2980B9",
+      "emoji": "🏛️",
+      "group": "alienazioni",
+      "desc": "Affitti di immobili pubblici, dividendi da partecipazioni dello Stato in aziende (ENI, Poste, ecc.), riscossione di crediti."
     }
   ],
+
   "categories": [
     {
       "label": "Pensioni e Previdenza",

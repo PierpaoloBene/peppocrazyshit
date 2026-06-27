@@ -580,6 +580,38 @@ main {
 .breakdown-bar { height: 100%; border-radius: 2px; transition: width 1s ease; }
 .breakdown-pct { font-size: 0.78rem; font-weight: 700; min-width: 3.5ch; text-align: right; flex-shrink: 0; }
 
+/* ── Revenue group headers ── */
+.revenue-group-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.45rem 0.45rem 0.25rem;
+}
+.revenue-group-header--mt {
+  margin-top: 0.6rem;
+  padding-top: 0.65rem;
+  border-top: 1.5px dashed var(--border);
+}
+.revenue-group-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+.revenue-group-desc {
+  font-size: 0.68rem;
+  color: var(--text-light);
+  line-height: 1.4;
+  font-style: italic;
+}
+.revenue-group-empty {
+  font-size: 0.72rem;
+  color: var(--text-light);
+  font-style: italic;
+  padding: 0.15rem 0.45rem 0.35rem;
+}
+
 /* Items with a tooltip get a "help" cursor */
 .breakdown-item.has-tip { cursor: help; }
 .breakdown-item.has-tip:hover { background: var(--bg-soft); }
