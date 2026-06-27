@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peppo Crazy Shit</title>
+  <meta name="description" content="Dati inutili. Analisi serie. Dashboard e infografiche su cose che nessuno ha chiesto ma tutti meritano." />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <main id="app">
+
+    <!-- ══ LANDING PAGE ══ -->
+    <section id="page-home" class="page active" aria-labelledby="home-heading">
+      <div class="home-layout">
+        <h1 id="home-heading" class="site-title">Peppo Crazy Shit</h1>
+        <div id="card-grid" class="card-grid" role="list"></div>
+      </div>
+    </section>
+
+    <!-- ══ SUPERCAZZOLA PAGE ══ -->
+    <section id="page-supercazzola" class="page page-supercazzola" aria-labelledby="supercazzola-heading" hidden>
+
+      <div class="page-topbar">
+        <button class="back-btn" id="back-supercazzola" aria-label="Torna alla home">
+          <span>←</span> Home
+        </button>
+        <span id="supercazzola-updated" class="page-updated"></span>
+      </div>
+
+      <div class="page-hero">
+        <h1 id="supercazzola-heading" class="page-title">
+          <span class="page-title-accent">SuperCazzola</span> Index
+        </h1>
+        <p class="page-desc">Quanto sono incomprensibili, vuoti e infarciti di buzzword i comunicati dei partiti italiani? Misuriamo la fuffa con matematica.</p>
+      </div>
+
+      <!-- Selezione partiti sopra al grafico -->
+      <div class="party-selector-bar">
+        <div class="party-selector" id="party-selector" role="group" aria-label="Seleziona partiti"></div>
+      </div>
+
+      <!-- Grafico grande al centro -->
+      <div class="chart-center-panel glass-card">
+        <h2 class="chart-title">Radar della Fuffa</h2>
+        <div class="radar-container">
+          <canvas id="radar-chart" width="600" height="600" aria-label="Radar chart della supercazzola"></canvas>
+        </div>
+      </div>
+
+      <!-- Elementi aggiuntivi sotto -->
+      <div class="below-chart-grid" style="grid-template-columns: 1fr;">
+        <div class="glass-card below-card">
+          <h2 class="chart-title">Campioni di Supercazzola</h2>
+          <div id="supercazzola-samples" class="samples-list"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══ WHASHABIT PAGE ══ -->
+    <section id="page-whashabit" class="page page-whashabit" aria-labelledby="whashabit-heading" hidden>
+
+      <div class="page-topbar">
+        <button class="back-btn" id="back-whashabit" aria-label="Torna alla home">
+          <span>←</span> Home
+        </button>
+        <!-- nessuna fonte per questa pagina -->
+        <span></span>
+      </div>
+
+      <div class="page-hero">
+        <h1 id="whashabit-heading" class="page-title">
+          <span class="page-title-accent">WhasHabits</span>
+        </h1>
+        <p class="page-desc">Un'analisi scientifica e imparziale delle abitudini igieniche della mia rete personale di conoscenze. I dati sono stati inseriti manualmente con cura e imbarazzo.</p>
+      </div>
+
+      <!-- Grafico grande al centro -->
+      <div class="chart-center-panel glass-card">
+        <h2 class="chart-title">La Distribuzione</h2>
+        <div class="bar-chart-container">
+          <canvas id="whashabit-chart" aria-label="Bar chart utilizzo bidet"></canvas>
+        </div>
+        <div id="whashabit-total" class="whashabit-total"></div>
+      </div>
+
+      <!-- Fazioni sotto -->
+      <div class="below-chart-grid factions-grid" id="factions-list">
+        <!-- Injected by JS -->
+      </div>
+
+    </section>
+
+    <!-- ══ PIL PAGE ══ -->
+    <section id="page-pil" class="page page-pil" aria-labelledby="pil-heading" hidden>
+
+      <div class="page-topbar">
+        <button class="back-btn" id="back-pil" aria-label="Torna alla home">
+          <span>←</span> Home
+        </button>
+        <span class="page-updated">Fonte: ISTAT / MEF 2024</span>
+      </div>
+
+      <div class="page-hero">
+        <h1 id="pil-heading" class="page-title">
+          <span class="page-title-accent">PilLow</span>
+        </h1>
+        <p class="page-desc">Dove finiscono i tuoi soldi? Distribuzione della spesa pubblica italiana — con un ticker in tempo reale che mostra il debito crescere mentre leggi questa frase.</p>
+      </div>
+
+      <!-- Ticker sotto il titolo -->
+      <div class="ticker-bar glass-card" role="region" aria-label="Ticker economico in tempo reale">
+        <div class="ticker-item">
+          <span class="ticker-label">PIL Annuo (est.)</span>
+          <span class="ticker-value" id="gdp-ticker">€ 0</span>
+        </div>
+        <div class="ticker-divider"></div>
+        <div class="ticker-item">
+          <span class="ticker-label">Debito Pubblico (est.)</span>
+          <span class="ticker-value ticker-red" id="debt-ticker">€ 0</span>
+        </div>
+        <div class="ticker-divider"></div>
+        <div class="ticker-item">
+          <span class="ticker-label">Spesa Pubblica (est.)</span>
+          <span class="ticker-value ticker-yellow" id="spend-ticker">€ 0</span>
+        </div>
+        <div class="ticker-note">⚡ Simulazione del flusso basata sui dati annuali ufficiali</div>
+      </div>
+
+      <!-- Grafico grande al centro -->
+      <div class="chart-center-panel glass-card">
+        <h2 class="chart-title">Distribuzione della Spesa Pubblica</h2>
+        <div class="donut-container">
+          <canvas id="pil-chart" aria-label="Donut chart spesa pubblica italiana"></canvas>
+        </div>
+      </div>
+
+      <!-- Breakdown sotto -->
+      <div class="pil-breakdown glass-card">
+        <h2 class="chart-title">Dettaglio per Categoria</h2>
+        <div id="pil-breakdown-list" class="breakdown-list"></div>
+        <div class="pil-source">
+          Dati: <a href="https://www.mef.gov.it" target="_blank" rel="noopener" class="source-link">MEF — Legge di Bilancio 2024</a>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Visitor widget -->
+  <aside id="visitor-widget" class="visitor-widget glass-card" role="complementary" aria-label="Statistiche visitatori">
+    <div class="visitor-row">
+      <span class="visitor-online-dot" aria-hidden="true"></span>
+      <span><span id="online-count">–</span> online ora</span>
+    </div>
+    <div class="visitor-row">
+      <span class="visitor-icon">👁️</span>
+      <span><span id="total-visits">–</span> visite totali</span>
+    </div>
+  </aside>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
