@@ -1,7 +1,7 @@
 {
   "frontale": 38,
   "posteriore": 22,
-  "non_usa": 5,
+  "altro": 5,
   "last_updated": "2026-06-01",
-  "note": "Dati raccolti dalla rete personale di Peppo. Modifica questi valori a piacere!"
+  "note": "Dati raccolti dalla rete personale di Peppo. Modifica questi valori a piacere! 'altro' include: la vaschetta (bidet come vasca), anti-bidet stranieri in Italia, e altre varianti non classificabili."
 }

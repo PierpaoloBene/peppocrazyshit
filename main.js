@@ -492,6 +492,7 @@ async function loadPil() {
 function renderPil() {
   const data = state.pilData;
   buildPieChart(data.categories);
+  renderPilLegend(data.categories);
   renderBreakdownList(data);
 }
 
@@ -500,15 +501,17 @@ function buildPieChart(categories) {
   if (!ctx) return;
   if (state.charts.pie) { state.charts.pie.destroy(); }
 
+  const total = categories.reduce((s, c) => s + c.valore_miliardi, 0);
+
   const data = {
     labels: categories.map(c => c.label),
     datasets: [{
       data: categories.map(c => c.valore_miliardi),
       backgroundColor: categories.map(c => c.color),
-      borderWidth: 4,
-      borderColor: 'var(--bg)',
-      hoverOffset: 16,
-      borderRadius: 4
+      borderWidth: 3,
+      borderColor: '#ffffff',
+      hoverOffset: 12,
+      hoverBorderWidth: 0,
     }]
   };
 
@@ -518,20 +521,25 @@ function buildPieChart(categories) {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      cutout: '65%',
+      cutout: '68%',
+      animation: { duration: 700, easing: 'easeOutQuart' },
       plugins: {
         legend: { display: false },
         tooltip: {
-          backgroundColor: 'rgba(0,0,0,0.8)',
-          titleFont: { family: 'Outfit, sans-serif', size: 14 },
-          bodyFont: { family: 'Outfit, sans-serif', size: 14, weight: 'bold' },
-          padding: 12,
+          backgroundColor: '#111111',
+          borderColor: '#333333',
+          borderWidth: 1,
+          titleColor: '#ffffff',
+          titleFont: { family: "'Inter', sans-serif", size: 12 },
+          bodyColor: '#cccccc',
+          bodyFont: { family: "'Inter', sans-serif", size: 12, weight: '600' },
+          padding: 10,
           cornerRadius: 8,
           callbacks: {
             label: function (context) {
-              const label = context.label || '';
               const value = context.parsed || 0;
-              return `${label}: €${value} Mrd`;
+              const pct = ((value / total) * 100).toFixed(1);
+              return ` €${value} Mrd (${pct}%)`;
             }
           }
         }
@@ -540,6 +548,27 @@ function buildPieChart(categories) {
   };
 
   state.charts.pie = new Chart(ctx, config);
+}
+
+function renderPilLegend(categories) {
+  const container = $('#pil-chart-legend');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const total = categories.reduce((s, c) => s + c.valore_miliardi, 0);
+
+  categories.forEach(cat => {
+    const pct = ((cat.valore_miliardi / total) * 100).toFixed(1);
+    const item = document.createElement('div');
+    item.className = 'pil-legend-item';
+    item.setAttribute('role', 'listitem');
+    item.innerHTML = `
+      <span class="pil-legend-dot" style="background: ${cat.color}"></span>
+      <span class="pil-legend-label" title="${cat.label}">${cat.emoji} ${cat.label}</span>
+      <span class="pil-legend-pct">${pct}%</span>
+    `;
+    container.appendChild(item);
+  });
 }
 
 function renderBreakdownList(data) {

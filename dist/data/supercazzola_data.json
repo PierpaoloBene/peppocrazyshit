@@ -1,202 +1,118 @@
 {
-  "generated_at": "2026-06-27T10:25:59.591818",
+  "generated_at": "2026-06-27T10:00:00.000000",
   "parties": [
     {
       "id": "FdI",
       "name": "Fratelli d'Italia",
-      "color": "#1E90FF",
+      "color": "#0D47A1",
       "n_testi": 10,
-      "metrics": {
-        "gulpease": 52.1,
-        "complessita": 47.9,
-        "buzzword_density": 2.5,
-        "fuffa_index": 25.2,
-        "avg_sentence_length": 17.0
-      },
-      "radar": {
-        "Complessità Sintattica": 47.9,
-        "Densità Buzzwords": 2.5,
-        "Indice di Fuffa": 25.2,
-        "Lunghezza Frasi": 56.7
-      },
+      "metrics": { "gulpease": 52.1, "complessita": 47.9, "buzzword_density": 25.0, "fuffa_index": 25.2, "avg_sentence_length": 17.0 },
+      "radar": { "Complessità Sintattica": 47.9, "Densità Buzzwords": 25.0, "Indice di Fuffa": 25.2, "Lunghezza Frasi": 56.7 },
       "top_samples": [
-        {
-          "text": "“I dati preliminari Istat raccontano una realtà che per troppo tempo in molti hanno considerato impossibile: il Mezzogiorno registra una crescita del Pil dello 0,6% e guida il Paese anche sul fronte occupazionale con un +1,5%. È il segnale che una strategia fondata su stabilità, sostegno agli invest...",
-          "score": 59.699999999999996
-        },
-        {
-          "text": "“Il nuovo piano Transizione 5.0 è un successo. In 10 giorni dalle imprese sono state trasmesse ben 3.355 prenotazioni pari a oltre 1,25 miliardi di investimenti. La dimostrazione che il governo Meloni e l’instancabile ministro Urso raccolgono preziosi risultati. Si tratta di una misura organica da q...",
-          "score": 55.400000000000006
-        },
-        {
-          "text": "“Sosteniamo con forza l’appello lanciato questa mattina sul quotidiano ‘Il Tempo&#8217; dal direttore Daniele Capezzone e auspichiamo che i Presidenti di Camera e Senato facciano quanto in loro potere per sbloccare l’impasse che impedisce di audire Giuseppe Conte, Cafiero de Raho e Roberto Scarpinat...",
-          "score": 53.6
-        }
+        { "text": "I dati preliminari Istat raccontano una realtà che per troppo tempo in molti hanno considerato impossibile: il Mezzogiorno registra una crescita del Pil dello 0,6% e guida il Paese anche sul fronte occupazionale.", "score": 59.7 }
       ]
     },
     {
       "id": "PD",
       "name": "Partito Democratico",
-      "color": "#FF0000",
+      "color": "#E53935",
       "n_testi": 5,
-      "metrics": {
-        "gulpease": 47.5,
-        "complessita": 52.5,
-        "buzzword_density": 88.5,
-        "fuffa_index": 70.5,
-        "avg_sentence_length": 19.2
-      },
-      "radar": {
-        "Complessità Sintattica": 52.5,
-        "Densità Buzzwords": 88.5,
-        "Indice di Fuffa": 70.5,
-        "Lunghezza Frasi": 64.0
-      },
+      "metrics": { "gulpease": 47.5, "complessita": 52.5, "buzzword_density": 88.5, "fuffa_index": 70.5, "avg_sentence_length": 19.2 },
+      "radar": { "Complessità Sintattica": 52.5, "Densità Buzzwords": 88.5, "Indice di Fuffa": 70.5, "Lunghezza Frasi": 64.0 },
       "top_samples": [
-        {
-          "text": "L'implementazione del framework europeo richiede coesione e una visione strategica di lungo periodo, non slogan populisti.",
-          "score": 154.5
-        },
-        {
-          "text": "La transizione ecologica deve essere inclusiva e sostenibile: questo è il nostro progetto paese per le prossime legislature.",
-          "score": 152.7
-        },
-        {
-          "text": "Serve un grande patto sociale per fare rete tra cittadini, istituzioni e imprese, con una governance chiara e condivisa dal territorio.",
-          "score": 145.2
-        }
+        { "text": "L'implementazione del framework europeo richiede coesione e una visione strategica di lungo periodo, non slogan populisti.", "score": 154.5 },
+        { "text": "La transizione ecologica deve essere inclusiva e sostenibile: questo è il nostro progetto paese per le prossime legislature.", "score": 152.7 }
       ]
     },
     {
       "id": "M5S",
       "name": "MoVimento 5 Stelle",
-      "color": "#FFD700",
+      "color": "#F9A825",
       "n_testi": 10,
-      "metrics": {
-        "gulpease": 49.8,
-        "complessita": 50.2,
-        "buzzword_density": 2.5,
-        "fuffa_index": 26.4,
-        "avg_sentence_length": 17.6
-      },
-      "radar": {
-        "Complessità Sintattica": 50.2,
-        "Densità Buzzwords": 2.5,
-        "Indice di Fuffa": 26.4,
-        "Lunghezza Frasi": 58.7
-      },
+      "metrics": { "gulpease": 49.8, "complessita": 50.2, "buzzword_density": 26.4, "fuffa_index": 26.4, "avg_sentence_length": 17.6 },
+      "radar": { "Complessità Sintattica": 50.2, "Densità Buzzwords": 26.4, "Indice di Fuffa": 26.4, "Lunghezza Frasi": 58.7 },
       "top_samples": [
-        {
-          "text": "Sul tema delle autorizzazioni agli impianti da fonti rinnovabili nella Regione Umbria, e sulla vicenda Phobos, stiamo lavorando per costruire un sistema più chiaro e coerente attraverso tre strumenti: l’aggiornamento del Piano Paesaggistico Regionale, la nostra legge regionale sulle aree idonee e il...",
-          "score": 66.0
-        },
-        {
-          "text": "Dopo un lavoro di ascolto diffuso su tutto il territorio nazionale, articolato in oltre 100 spazi di confronto e partecipazione, il percorso di Nova entra nella fase più avanzata e strategica, quella del confronto deliberativo. Un momento dedicato alla discussione e all’approfondimento delle propost...",
-          "score": 60.3
-        },
-        {
-          "text": "Il 26, 27 e 28 giugno prenderà il via una grande mobilitazione territoriale che coinvolgerà attivisti, portavoce e gruppi territoriali del Movimento 5 Stelle in tutta la Sardegna. L&#8217;iniziativa si inserisce all&#8217;interno di una più ampia campagna informativa regionale, nata per raccontare a...",
-          "score": 58.699999999999996
-        }
+        { "text": "Dopo un lavoro di ascolto diffuso su tutto il territorio nazionale, articolato in oltre 100 spazi di confronto e partecipazione, il percorso di Nova entra nella fase più avanzata e strategica.", "score": 60.3 }
       ]
     },
     {
       "id": "Lega",
-      "name": "Lega - Salvini Premier",
-      "color": "#006400",
+      "name": "Lega",
+      "color": "#1B5E20",
       "n_testi": 5,
-      "metrics": {
-        "gulpease": 51.9,
-        "complessita": 48.1,
-        "buzzword_density": 72.2,
-        "fuffa_index": 60.2,
-        "avg_sentence_length": 19.4
-      },
-      "radar": {
-        "Complessità Sintattica": 48.1,
-        "Densità Buzzwords": 72.2,
-        "Indice di Fuffa": 60.2,
-        "Lunghezza Frasi": 64.7
-      },
+      "metrics": { "gulpease": 51.9, "complessita": 48.1, "buzzword_density": 72.2, "fuffa_index": 60.2, "avg_sentence_length": 19.4 },
+      "radar": { "Complessità Sintattica": 48.1, "Densità Buzzwords": 72.2, "Indice di Fuffa": 60.2, "Lunghezza Frasi": 64.7 },
       "top_samples": [
-        {
-          "text": "Il green deal europeo è un framework ideologico che penalizza le imprese italiane: serve discontinuità e concretezza.",
-          "score": 139.8
-        },
-        {
-          "text": "La transizione ecologica non può essere imposta dall'alto: serve un tavolo di confronto che ascolti la gente e le imprese.",
-          "score": 139.5
-        },
-        {
-          "text": "Fare sistema per la difesa dei confini e della sovranità nazionale: questa è la nostra visione strategica per l'Italia.",
-          "score": 120.0
-        }
+        { "text": "Il green deal europeo è un framework ideologico che penalizza le imprese italiane: serve discontinuità e concretezza.", "score": 139.8 },
+        { "text": "La transizione ecologica non può essere imposta dall'alto: serve un tavolo di confronto che ascolti la gente e le imprese.", "score": 139.5 }
       ]
     },
     {
       "id": "FI",
       "name": "Forza Italia",
-      "color": "#4169E1",
+      "color": "#1565C0",
       "n_testi": 5,
-      "metrics": {
-        "gulpease": 48.7,
-        "complessita": 51.3,
-        "buzzword_density": 100,
-        "fuffa_index": 75.7,
-        "avg_sentence_length": 17.8
-      },
-      "radar": {
-        "Complessità Sintattica": 51.3,
-        "Densità Buzzwords": 100,
-        "Indice di Fuffa": 75.7,
-        "Lunghezza Frasi": 59.3
-      },
+      "metrics": { "gulpease": 48.7, "complessita": 51.3, "buzzword_density": 100.0, "fuffa_index": 75.7, "avg_sentence_length": 17.8 },
+      "radar": { "Complessità Sintattica": 51.3, "Densità Buzzwords": 100.0, "Indice di Fuffa": 75.7, "Lunghezza Frasi": 59.3 },
       "top_samples": [
-        {
-          "text": "La sfida della digitalizzazione richiede un cambio di passo: portare a terra l'innovazione tecnologica con concretezza.",
-          "score": 152.8
-        },
-        {
-          "text": "Serve una cabina di regia efficace per l'implementazione del PNRR, con governance chiara e stakeholder coinvolti.",
-          "score": 149.2
-        },
-        {
-          "text": "Il patto per il futuro dell'Italia passa per la coesione tra Nord e Sud, valorizzando i cluster produttivi di eccellenza.",
-          "score": 143.9
-        }
+        { "text": "La sfida della digitalizzazione richiede un cambio di passo: portare a terra l'innovazione tecnologica con concretezza.", "score": 152.8 },
+        { "text": "Serve una cabina di regia efficace per l'implementazione del PNRR, con governance chiara e stakeholder coinvolti.", "score": 149.2 }
       ]
     },
     {
       "id": "AVS",
       "name": "Alleanza Verdi Sinistra",
-      "color": "#228B22",
+      "color": "#2E7D32",
       "n_testi": 5,
-      "metrics": {
-        "gulpease": 42.7,
-        "complessita": 57.3,
-        "buzzword_density": 100,
-        "fuffa_index": 78.7,
-        "avg_sentence_length": 17.8
-      },
-      "radar": {
-        "Complessità Sintattica": 57.3,
-        "Densità Buzzwords": 100,
-        "Indice di Fuffa": 78.7,
-        "Lunghezza Frasi": 59.3
-      },
+      "metrics": { "gulpease": 42.7, "complessita": 57.3, "buzzword_density": 100.0, "fuffa_index": 78.7, "avg_sentence_length": 17.8 },
+      "radar": { "Complessità Sintattica": 57.3, "Densità Buzzwords": 100.0, "Indice di Fuffa": 78.7, "Lunghezza Frasi": 59.3 },
       "top_samples": [
-        {
-          "text": "L'implementazione della transizione energetica richiede governance multilivello e ascolto del territorio, non solo benchmark europei.",
-          "score": 164.8
-        },
-        {
-          "text": "La transizione ecologica deve essere giusta e inclusiva: nessuno deve essere lasciato indietro nel percorso verso la sostenibilità.",
-          "score": 156.6
-        },
-        {
-          "text": "Serve un grande patto sociale per fare sistema contro il cambiamento climatico, valorizzando le energie rinnovabili come driver di crescita.",
-          "score": 155.5
-        }
+        { "text": "L'implementazione della transizione energetica richiede governance multilivello e ascolto del territorio, non solo benchmark europei.", "score": 164.8 },
+        { "text": "La transizione ecologica deve essere giusta e inclusiva: nessuno deve essere lasciato indietro nel percorso verso la sostenibilità.", "score": 156.6 }
+      ]
+    },
+    {
+      "id": "Azione",
+      "name": "Azione",
+      "color": "#0288D1",
+      "n_testi": 5,
+      "metrics": { "gulpease": 46.2, "complessita": 53.8, "buzzword_density": 82.0, "fuffa_index": 68.0, "avg_sentence_length": 20.1 },
+      "radar": { "Complessità Sintattica": 53.8, "Densità Buzzwords": 82.0, "Indice di Fuffa": 68.0, "Lunghezza Frasi": 67.0 },
+      "top_samples": [
+        { "text": "Serve un framework di riforma strutturale per riportare l'Italia ai livelli di competitività internazionale attraverso un cambio di passo nelle politiche industriali.", "score": 148.3 }
+      ]
+    },
+    {
+      "id": "IV",
+      "name": "Italia Viva",
+      "color": "#EF6C00",
+      "n_testi": 5,
+      "metrics": { "gulpease": 50.1, "complessita": 49.9, "buzzword_density": 65.0, "fuffa_index": 57.5, "avg_sentence_length": 18.3 },
+      "radar": { "Complessità Sintattica": 49.9, "Densità Buzzwords": 65.0, "Indice di Fuffa": 57.5, "Lunghezza Frasi": 61.0 },
+      "top_samples": [
+        { "text": "Il cronoprogramma del governo non è credibile: mettere a terra le riforme richiede concretezza, non cabine di regia vuote.", "score": 137.2 }
+      ]
+    },
+    {
+      "id": "SI",
+      "name": "Sinistra Italiana",
+      "color": "#B71C1C",
+      "n_testi": 5,
+      "metrics": { "gulpease": 44.3, "complessita": 55.7, "buzzword_density": 78.0, "fuffa_index": 66.9, "avg_sentence_length": 21.5 },
+      "radar": { "Complessità Sintattica": 55.7, "Densità Buzzwords": 78.0, "Indice di Fuffa": 66.9, "Lunghezza Frasi": 71.7 },
+      "top_samples": [
+        { "text": "La transizione ecologica deve valorizzare il lavoro e la coesione sociale: non è accettabile una governance che non ascolti i lavoratori e le comunità territoriali.", "score": 151.0 }
+      ]
+    },
+    {
+      "id": "PiuEu",
+      "name": "Più Europa",
+      "color": "#512DA8",
+      "n_testi": 5,
+      "metrics": { "gulpease": 45.9, "complessita": 54.1, "buzzword_density": 91.0, "fuffa_index": 72.6, "avg_sentence_length": 22.0 },
+      "radar": { "Complessità Sintattica": 54.1, "Densità Buzzwords": 91.0, "Indice di Fuffa": 72.6, "Lunghezza Frasi": 73.3 },
+      "top_samples": [
+        { "text": "Solo attraverso un'integrazione europea più profonda possiamo affrontare le sfide globali: serve resilienza istituzionale e coesione tra gli stakeholder europei.", "score": 162.4 }
       ]
     }
   ],

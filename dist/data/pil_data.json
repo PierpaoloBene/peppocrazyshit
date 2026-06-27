@@ -1,20 +1,20 @@
 {
-  "year": 2024,
-  "total_spesa_miliardi": 1070,
-  "gdp_annuo_miliardi": 2089,
-  "debito_pubblico_miliardi": 2870,
+  "year": 2025,
+  "total_pil": 2180,
+  "total_debt": 2980,
+  "total_spending": 1210.0,
   "categories": [
-    { "label": "Pensioni e Previdenza", "valore_miliardi": 316, "color": "#FF007F", "emoji": "👴" },
-    { "label": "Sanità", "valore_miliardi": 134, "color": "#00E5FF", "emoji": "🏥" },
-    { "label": "Istruzione", "valore_miliardi": 79, "color": "#39FF14", "emoji": "🎓" },
-    { "label": "Interessi sul Debito", "valore_miliardi": 84, "color": "#FF4500", "emoji": "💸" },
-    { "label": "Welfare & Sociale", "valore_miliardi": 118, "color": "#FFD700", "emoji": "🤝" },
-    { "label": "Infrastrutture & Trasporti", "valore_miliardi": 47, "color": "#9B59B6", "emoji": "🚆" },
+    { "label": "Pensioni e Previdenza", "valore_miliardi": 335, "color": "#FF007F", "emoji": "👴" },
+    { "label": "Sanità", "valore_miliardi": 136, "color": "#00E5FF", "emoji": "🏥" },
+    { "label": "Welfare & Sociale", "valore_miliardi": 120, "color": "#FFD700", "emoji": "🤝" },
+    { "label": "Istruzione", "valore_miliardi": 82, "color": "#39FF14", "emoji": "🎓" },
+    { "label": "Interessi sul Debito", "valore_miliardi": 90, "color": "#FF4500", "emoji": "💸" },
+    { "label": "Pubblica Amministrazione", "valore_miliardi": 58, "color": "#1ABC9C", "emoji": "🏛️" },
+    { "label": "Infrastrutture & Trasporti", "valore_miliardi": 52, "color": "#9B59B6", "emoji": "🚆" },
+    { "label": "Ambiente & Energia", "valore_miliardi": 42, "color": "#2ECC71", "emoji": "🌿" },
     { "label": "Difesa", "valore_miliardi": 32, "color": "#E67E22", "emoji": "⚔️" },
-    { "label": "Pubblica Amministrazione", "valore_miliardi": 55, "color": "#1ABC9C", "emoji": "🏛️" },
-    { "label": "Ambiente & Energia", "valore_miliardi": 38, "color": "#2ECC71", "emoji": "🌿" },
-    { "label": "Altro", "valore_miliardi": 167, "color": "#7F8C8D", "emoji": "📦" }
+    { "label": "Altro", "valore_miliardi": 263, "color": "#7F8C8D", "emoji": "📦" }
   ],
-  "source": "ISTAT / Banca d'Italia / MEF - Legge di Bilancio 2024",
-  "source_url": "https://www.mef.gov.it/it/atti-documenti/documenti-programmatici/"
+  "source": "RGS/MEF - Bilancio di Previsione 2025-2027",
+  "source_url": "https://www.rgs.mef.gov.it/VERSIONE-I/attivita_istituzionali/formazione_e_gestione_del_bilancio/bilancio_di_previsione/index.html"
 }

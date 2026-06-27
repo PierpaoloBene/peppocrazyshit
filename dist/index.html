@@ -3,143 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PeppoCrazyShit — Dashboard & Infografiche</title>
-  <meta name="description" content="Il sito più inutilmente serio d'Italia: analisi politiche, sociologiche e macroeconomiche di cose che non interessano a nessuno." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-  <script type="module" crossorigin src="/peppocrazyshit/assets/index-DNbj4VNT.js"></script>
-  <link rel="stylesheet" crossorigin href="/peppocrazyshit/assets/index-EEd2vnW4.css">
+  <title>Peppo Crazy Shit</title>
+  <meta name="description" content="Dati inutili. Analisi serie. Dashboard e infografiche su cose che nessuno ha chiesto ma tutti meritano." />
+  <script type="module" crossorigin src="/peppocrazyshit/assets/index-q5KMCiq3.js"></script>
+  <link rel="stylesheet" crossorigin href="/peppocrazyshit/assets/index-BwXhKYdx.css">
 </head>
 <body>
 
-  <!-- ───────── HEADER ───────── -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="#" id="logo-link" class="logo-link" aria-label="Torna alla home">
-        <span class="logo-icon">🤌</span>
-        <span class="logo-text">peppo<span class="logo-accent">crazy</span>shit</span>
-      </a>
-      <nav class="header-nav">
-        <span class="header-tagline">Dati inutili. Analisi serie.</span>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ───────── MAIN APP ───────── -->
   <main id="app">
 
-    <!-- LANDING PAGE -->
+    <!-- ══ LANDING PAGE ══ -->
     <section id="page-home" class="page active" aria-labelledby="home-heading">
-      <div class="hero">
-        <div class="hero-badge">🇮🇹 MADE WITH LOVE & DISDAIN</div>
-        <h1 id="home-heading" class="hero-title">
-          Il sito che l'Italia<br /><span class="gradient-text">non merita ma si è guadagnata</span>
-        </h1>
-        <p class="hero-sub">Dashboard, infografiche e analisi su temi fondamentali per il dibattito pubblico italiano.</p>
-      </div>
-
-      <div id="card-grid" class="card-grid" role="list">
-        <!-- Cards injected by JS -->
+      <div class="home-layout">
+        <h1 id="home-heading" class="site-title">Peppo Crazy Shit</h1>
+        <div id="card-grid" class="card-grid" role="list"></div>
       </div>
     </section>
 
-    <!-- SUPERCAZZOLA PAGE -->
-    <section id="page-supercazzola" class="page" aria-labelledby="supercazzola-heading" hidden>
-      <div class="page-header">
+    <!-- ══ SUPERCAZZOLA PAGE ══ -->
+    <section id="page-supercazzola" class="page page-supercazzola" aria-labelledby="supercazzola-heading" hidden>
+
+      <div class="page-topbar">
         <button class="back-btn" id="back-supercazzola" aria-label="Torna alla home">
-          <span class="back-arrow">←</span> Home
+          <span>←</span> Home
         </button>
-        <div class="page-meta">
-          <span class="page-tag">🗣️ Analisi del Testo</span>
-          <span id="supercazzola-updated" class="page-updated"></span>
+        <span id="supercazzola-updated" class="page-updated"></span>
+      </div>
+
+      <div class="page-hero">
+        <h1 id="supercazzola-heading" class="page-title">
+          <span class="page-title-accent">SuperCazzola</span> Index
+        </h1>
+        <p class="page-desc">Quanto sono incomprensibili, vuoti e infarciti di buzzword i comunicati dei partiti italiani? Misuriamo la fuffa con matematica.</p>
+      </div>
+
+      <!-- Selezione partiti sopra al grafico -->
+      <div class="party-selector-bar">
+        <div class="party-selector" id="party-selector" role="group" aria-label="Seleziona partiti"></div>
+      </div>
+
+      <!-- Grafico grande al centro -->
+      <div class="chart-center-panel glass-card">
+        <h2 class="chart-title">Radar della Fuffa</h2>
+        <div class="radar-container">
+          <canvas id="radar-chart" width="600" height="600" aria-label="Radar chart della supercazzola"></canvas>
         </div>
       </div>
-      <h1 id="supercazzola-heading" class="page-title">L'Indice della <span class="gradient-text">Supercazzola</span></h1>
-      <p class="page-desc">Quanto sono incomprensibili, vuoti e infarciti di buzzword i comunicati dei partiti italiani? I dati parlano chiaro — o meglio, non parlano affatto chiaramente.</p>
 
-      <div id="supercazzola-content" class="supercazzola-layout">
-        <div class="chart-panel glass-card">
-          <h2 class="chart-title">Radar della Fuffa per Partito</h2>
-          <div class="party-selector" id="party-selector" role="group" aria-label="Seleziona partiti"></div>
-          <div class="radar-container">
-            <canvas id="radar-chart" width="500" height="500" aria-label="Radar chart della supercazzola"></canvas>
-          </div>
-        </div>
-        <div class="metrics-panel">
+      <!-- Elementi aggiuntivi sotto -->
+      <div class="below-chart-grid" style="grid-template-columns: 1fr;">
+        <div class="glass-card below-card">
           <h2 class="chart-title">Campioni di Supercazzola</h2>
           <div id="supercazzola-samples" class="samples-list"></div>
-          <div class="buzzwords-cloud glass-card">
-            <h3 class="buzztitle">Buzzwords Monitorate</h3>
-            <div id="buzzwords-display" class="buzzwords-tags"></div>
-          </div>
         </div>
       </div>
+
     </section>
 
-    <!-- WHASHABIT PAGE -->
-    <section id="page-whashabit" class="page" aria-labelledby="whashabit-heading" hidden>
-      <div class="page-header">
+    <!-- ══ WHASHABIT PAGE ══ -->
+    <section id="page-whashabit" class="page page-whashabit" aria-labelledby="whashabit-heading" hidden>
+
+      <div class="page-topbar">
         <button class="back-btn" id="back-whashabit" aria-label="Torna alla home">
-          <span class="back-arrow">←</span> Home
+          <span>←</span> Home
         </button>
-        <div class="page-meta">
-          <span class="page-tag">🚿 Sociologia Domestica</span>
-        </div>
+        <!-- nessuna fonte per questa pagina -->
+        <span></span>
       </div>
-      <h1 id="whashabit-heading" class="page-title">Whashabit — <span class="gradient-text">Il Grande Dibattito</span></h1>
-      <p class="page-desc">Un'analisi scientifica e imparziale delle abitudini igieniche della rete di conoscenze personale di Peppo. Dati aggiornati manualmente, con cura e un po' di imbarazzo.</p>
 
-      <div class="whashabit-layout">
-        <div class="chart-panel glass-card whashabit-chart-panel">
-          <h2 class="chart-title">La Distribuzione</h2>
-          <div class="bar-chart-container">
-            <canvas id="whashabit-chart" aria-label="Bar chart utilizzo bidet"></canvas>
-          </div>
-          <div id="whashabit-total" class="whashabit-total"></div>
-        </div>
-        <div class="whashabit-right">
-          <div class="factions-panel glass-card">
-            <h2 class="chart-title">Le Fazioni</h2>
-            <div class="factions-list" id="factions-list"></div>
-          </div>
-          <div class="vote-panel glass-card" id="vote-panel">
-            <h2 class="chart-title">Tu dove stai? 🗳️</h2>
-            <p class="vote-desc">Il tuo voto viene contato solo una volta (salvato in locale sul tuo browser).</p>
-            <div class="vote-buttons" id="vote-buttons">
-              <button class="vote-btn" id="vote-frontale" data-vote="frontale">
-                <span class="vote-emoji">🚿</span>
-                <span>Frontale</span>
-              </button>
-              <button class="vote-btn" id="vote-posteriore" data-vote="posteriore">
-                <span class="vote-emoji">🔄</span>
-                <span>Posteriore</span>
-              </button>
-              <button class="vote-btn" id="vote-non_usa" data-vote="non_usa">
-                <span class="vote-emoji">🏜️</span>
-                <span>Non lo uso</span>
-              </button>
-            </div>
-            <div id="voted-msg" class="voted-msg" hidden></div>
-          </div>
-        </div>
+      <div class="page-hero">
+        <h1 id="whashabit-heading" class="page-title">
+          <span class="page-title-accent">WhasHabits</span>
+        </h1>
+        <p class="page-desc">Un'analisi scientifica e imparziale delle abitudini igieniche della mia rete personale di conoscenze. I dati sono stati inseriti manualmente con cura e imbarazzo.</p>
       </div>
+
+      <!-- Grafico grande al centro -->
+      <div class="chart-center-panel glass-card">
+        <h2 class="chart-title">In che posizione fai il bidet?</h2>
+        <div class="bar-chart-container">
+          <canvas id="whashabit-chart" aria-label="Bar chart utilizzo bidet"></canvas>
+        </div>
+        <div id="whashabit-total" class="whashabit-total"></div>
+      </div>
+
+      <!-- Fazioni sotto -->
+      <div class="below-chart-grid factions-grid" id="factions-list">
+        <!-- Injected by JS -->
+      </div>
+
     </section>
 
-    <!-- PIL PAGE -->
-    <section id="page-pil" class="page" aria-labelledby="pil-heading" hidden>
-      <div class="page-header">
-        <button class="back-btn" id="back-pil" aria-label="Torna alla home">
-          <span class="back-arrow">←</span> Home
-        </button>
-        <div class="page-meta">
-          <span class="page-tag">💶 Macroeconomia</span>
-          <span class="page-updated">Fonte: ISTAT / MEF 2024</span>
-        </div>
-      </div>
-      <h1 id="pil-heading" class="page-title">PIL & Spesa <span class="gradient-text">Pubblica Italiana</span></h1>
-      <p class="page-desc">Dove finiscono i tuoi soldi? Un Donut Chart del bilancio dello Stato — e un ticker in tempo reale che mostra quanto cresce il debito mentre leggi questa frase.</p>
+    <!-- ══ PIL PAGE ══ -->
+    <section id="page-pil" class="page page-pil" aria-labelledby="pil-heading" hidden>
 
+      <div class="page-topbar">
+        <button class="back-btn" id="back-pil" aria-label="Torna alla home">
+          <span>←</span> Home
+        </button>
+        <span class="page-updated">Fonte: RGS/MEF — Bilancio di Previsione 2025</span>
+      </div>
+
+      <div class="page-hero">
+        <h1 id="pil-heading" class="page-title">
+          <span class="page-title-accent">PilLow</span>
+        </h1>
+        <p class="page-desc">piccola distribuzione del pil italiano</p>
+      </div>
+
+      <!-- Ticker sotto il titolo -->
       <div class="ticker-bar glass-card" role="region" aria-label="Ticker economico in tempo reale">
         <div class="ticker-item">
           <span class="ticker-label">PIL Annuo (est.)</span>
@@ -155,39 +127,66 @@
           <span class="ticker-label">Spesa Pubblica (est.)</span>
           <span class="ticker-value ticker-yellow" id="spend-ticker">€ 0</span>
         </div>
-        <div class="ticker-note">⚡ Simulazione del flusso in tempo reale basata sui dati annuali ufficiali</div>
+        <div class="ticker-note">⚡ Simulazione di crescita live basata sui dati annuali ufficiali</div>
       </div>
 
-      <div class="pil-layout">
-        <div class="chart-panel glass-card pil-donut-panel">
+      <!-- Grafico e Breakdown in grid -->
+      <div class="pil-dashboard-grid">
+        <!-- Grafico grande al centro -->
+        <div class="chart-center-panel glass-card">
           <h2 class="chart-title">Distribuzione della Spesa Pubblica</h2>
-          <div class="donut-container">
-            <canvas id="pil-chart" aria-label="Donut chart della spesa pubblica italiana"></canvas>
+          <div class="pil-chart-wrapper">
+            <div class="donut-container">
+              <canvas id="pil-chart" aria-label="Donut chart spesa pubblica italiana"></canvas>
+              <div class="donut-center-text" aria-hidden="true">
+                <span class="donut-val">1.21</span>
+                <span class="donut-lbl">Trilioni</span>
+              </div>
+            </div>
+            <div id="pil-chart-legend" class="pil-legend" role="list" aria-label="Legenda categorie spesa"></div>
           </div>
         </div>
+
+        <!-- Breakdown sotto (ora a lato) -->
         <div class="pil-breakdown glass-card">
           <h2 class="chart-title">Dettaglio per Categoria</h2>
           <div id="pil-breakdown-list" class="breakdown-list"></div>
           <div class="pil-source">
-            Dati: <a href="https://www.mef.gov.it" target="_blank" rel="noopener" class="source-link">MEF — Legge di Bilancio 2024</a>
+            Dati: <a href="https://www.rgs.mef.gov.it/VERSIONE-I/attivita_istituzionali/formazione_e_gestione_del_bilancio/bilancio_di_previsione/index.html" target="_blank" rel="noopener" class="source-link">RGS/MEF — Bilancio di Previsione 2025-2027</a>
           </div>
         </div>
       </div>
+
     </section>
 
   </main>
 
-  <!-- ───────── VISITOR WIDGET ───────── -->
+  <!-- Visitor widget -->
   <aside id="visitor-widget" class="visitor-widget glass-card" role="complementary" aria-label="Statistiche visitatori">
     <div class="visitor-row">
-      <span class="visitor-online-dot" aria-hidden="true"></span>
-      <span><span id="online-count">–</span> online ora</span>
-    </div>
-    <div class="visitor-row">
       <span class="visitor-icon">👁️</span>
-      <span><span id="total-visits">–</span> visite totali</span>
+      <span><span id="total-visits">...</span> visite totali</span>
     </div>
   </aside>
+
+  <!-- GLOBAL FOOTER -->
+  <footer class="global-footer">
+    <div class="footer-content">
+      <div class="footer-text-col">
+        <div class="disclaimer-title">PeppoCrazyShit ☕</div>
+        <p class="disclaimer-text">
+          Tutti i dati riportati in questo sito, a scopo d'intrattenimento, potrebbero contenere imprecisioni o errori. Usali per guidare le chiacchierate al bar e non per decidere chi votare.
+        </p>
+      </div>
+      
+      <div class="donation-banner">
+        <p>I contenuti sono gratuiti, ma richiedono tempo e server.</p>
+        <a href="https://paypal.me/pagapeppo" target="_blank" rel="noopener noreferrer" class="donate-btn">
+          <span>🍹</span> Offrimi uno Spritz
+        </a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>

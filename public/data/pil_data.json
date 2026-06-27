@@ -15,6 +15,6 @@
     { "label": "Difesa", "valore_miliardi": 32, "color": "#E67E22", "emoji": "⚔️" },
     { "label": "Altro", "valore_miliardi": 263, "color": "#7F8C8D", "emoji": "📦" }
   ],
-  "source": "MEF - Documento Programmatico di Bilancio (DPB) 2025",
-  "source_url": "https://www.mef.gov.it/it/atti-documenti/documenti-programmatici/"
+  "source": "RGS/MEF - Bilancio di Previsione 2025-2027",
+  "source_url": "https://www.rgs.mef.gov.it/VERSIONE-I/attivita_istituzionali/formazione_e_gestione_del_bilancio/bilancio_di_previsione/index.html"
 }

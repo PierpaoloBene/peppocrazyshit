@@ -100,7 +100,7 @@
         <button class="back-btn" id="back-pil" aria-label="Torna alla home">
           <span>←</span> Home
         </button>
-        <span class="page-updated">Fonte: ISTAT / MEF 2025</span>
+        <span class="page-updated">Fonte: RGS/MEF — Bilancio di Previsione 2025</span>
       </div>
 
       <div class="page-hero">
@@ -134,12 +134,15 @@
         <!-- Grafico grande al centro -->
         <div class="chart-center-panel glass-card">
           <h2 class="chart-title">Distribuzione della Spesa Pubblica</h2>
-          <div class="donut-container">
-            <canvas id="pil-chart" aria-label="Donut chart spesa pubblica italiana"></canvas>
-            <div class="donut-center-text" aria-hidden="true">
-              <span class="donut-val">1.21</span>
-              <span class="donut-lbl">Trilioni</span>
+          <div class="pil-chart-wrapper">
+            <div class="donut-container">
+              <canvas id="pil-chart" aria-label="Donut chart spesa pubblica italiana"></canvas>
+              <div class="donut-center-text" aria-hidden="true">
+                <span class="donut-val">1.21</span>
+                <span class="donut-lbl">Trilioni</span>
+              </div>
             </div>
+            <div id="pil-chart-legend" class="pil-legend" role="list" aria-label="Legenda categorie spesa"></div>
           </div>
         </div>
 
@@ -148,7 +151,7 @@
           <h2 class="chart-title">Dettaglio per Categoria</h2>
           <div id="pil-breakdown-list" class="breakdown-list"></div>
           <div class="pil-source">
-            Dati: <a href="https://www.mef.gov.it/focus/La-Legge-di-Bilancio-2025/" target="_blank" rel="noopener" class="source-link">MEF — Legge di Bilancio 2025</a>
+            Dati: <a href="https://www.rgs.mef.gov.it/VERSIONE-I/attivita_istituzionali/formazione_e_gestione_del_bilancio/bilancio_di_previsione/index.html" target="_blank" rel="noopener" class="source-link">RGS/MEF — Bilancio di Previsione 2025-2027</a>
           </div>
         </div>
       </div>
