@@ -134,11 +134,39 @@
       "desc": "Forze armate, acquisto di equipaggiamenti militari e contributi alle missioni NATO e UE."
     },
     {
+      "label": "Giustizia",
+      "valore_miliardi": 13,
+      "color": "#C0392B",
+      "emoji": "⚖️",
+      "desc": "Tribunali, procure, carceri e magistratura. Include gli stipendi di giudici, pubblici ministeri e polizia penitenziaria."
+    },
+    {
+      "label": "Cultura & Turismo",
+      "valore_miliardi": 5,
+      "color": "#8E44AD",
+      "emoji": "🎭",
+      "desc": "Musei statali (Colosseo, Uffizi, ecc.), cinema, teatro, patrimonio UNESCO e promozione del turismo all'estero."
+    },
+    {
+      "label": "Agricoltura",
+      "valore_miliardi": 8,
+      "color": "#27AE60",
+      "emoji": "🌾",
+      "desc": "Contributi PAC (Piano Agricolo Comune UE), sviluppo rurale, pesca e fondi per le filiere agroalimentari italiane."
+    },
+    {
+      "label": "Ricerca",
+      "valore_miliardi": 10,
+      "color": "#2980B9",
+      "emoji": "🔬",
+      "desc": "Finanziamento di CNR, ENEA, INFN e di borse di dottorato. Non include i fondi per l'istruzione universitaria."
+    },
+    {
       "label": "Altro",
-      "valore_miliardi": 263,
+      "valore_miliardi": 227,
       "color": "#7F8C8D",
       "emoji": "📦",
-      "desc": "Giustizia, cultura, ricerca, agricoltura, debiti pregressi e spese varie non classificabili nelle altre categorie."
+      "desc": "Debiti pregressi (arretrati PA, contenziosi, rimborsi fiscali) e spese non classificabili altrove (es. ordine pubblico, fondi UE, cooperazione internazionale)."
     }
   ],
   "source": "RGS/MEF - Bilancio di Previsione 2025-2027",
