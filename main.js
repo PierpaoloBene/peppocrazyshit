@@ -68,23 +68,15 @@ function showPage(pageId) {
 }
 
 // ─── VISITOR COUNTER ───
-function initVisitorCounter() {
-  const VISITS_KEY = 'pcs_total_visits';
-  let visits = parseInt(localStorage.getItem(VISITS_KEY) || '0', 10);
-  visits += 1;
-  localStorage.setItem(VISITS_KEY, visits);
-
-  $('#total-visits').textContent = visits.toLocaleString('it-IT');
-
-  // Simulate real-time online users (3-12 range)
-  let online = Math.floor(Math.random() * 5) + 4;
-  $('#online-count').textContent = online;
-
-  setInterval(() => {
-    const delta = Math.random() < 0.5 ? -1 : 1;
-    online = Math.max(2, Math.min(15, online + delta));
-    $('#online-count').textContent = online;
-  }, 4500 + Math.random() * 3000);
+async function initVisitorCounter() {
+  try {
+    const res = await fetch('https://api.counterapi.dev/v1/peppocrazyshit/visits/up');
+    const data = await res.json();
+    $('#total-visits').textContent = data.count.toLocaleString('it-IT');
+  } catch (e) {
+    console.error('Errore caricamento contatore visite', e);
+    $('#total-visits').textContent = '—';
+  }
 }
 
 // ─── LANDING PAGE CARDS ───
