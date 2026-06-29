@@ -7,6 +7,9 @@ on:
   workflow_dispatch:
     # Permette di lanciare lo scraper manualmente dalla UI di GitHub
 
+permissions:
+  contents: write
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
