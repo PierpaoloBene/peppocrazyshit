@@ -1,20 +1,21 @@
 {
-  "generated_at": "2026-06-28T02:04:28.674555",
+  "generated_at": "2026-06-29T23:04:48.120774",
   "parties": [
     {
       "id": "FdI",
       "name": "Fratelli d'Italia",
       "color": "#0D47A1",
-      "n_testi": 2,
+      "n_testi": 10,
+      "used_fallback": false,
       "radar": {
-        "Complessità Periodi": 50,
-        "Vuoto Semantico": 50,
-        "Indice di Fuffa": 50,
-        "Astrazione Concettuale": 50
+        "Complessità Periodi": 50.0,
+        "Vuoto Semantico": 50.0,
+        "Indice di Fuffa": 50.0,
+        "Astrazione Concettuale": 50.0
       },
       "top_samples": [
         {
-          "text": "I dati preliminari Istat raccontano una realtà che per troppo tempo in molti hanno considerato impossibile: il Mezzogiorno registra una crescita del Pil dello 0,6% e guida il Paese anche sul fronte occupazionale.",
+          "text": "&#8220;L&#8217;operazione di trasferimento dei detenuti al regime di 41 bis realizzata dal Gom costituisce la prima fase del progetto di riorganizzazione fortemente voluto dal mio predecessore Andrea Delmastro Delle Vedove, che ha l&#8217;effetto di concentrare i detenuti condannati per mafia, di razionalizzare il lavoro della Polizia penitenziaria e liberare posti detentivi. Un&#8217;operazione s",
           "score": 50,
           "convoluted_phrases": []
         }
@@ -24,16 +25,17 @@
       "id": "PD",
       "name": "Partito Democratico",
       "color": "#E53935",
-      "n_testi": 2,
+      "n_testi": 3,
+      "used_fallback": true,
       "radar": {
-        "Complessità Periodi": 50,
-        "Vuoto Semantico": 50,
-        "Indice di Fuffa": 50,
-        "Astrazione Concettuale": 50
+        "Complessità Periodi": 50.0,
+        "Vuoto Semantico": 50.0,
+        "Indice di Fuffa": 50.0,
+        "Astrazione Concettuale": 50.0
       },
       "top_samples": [
         {
-          "text": "L'implementazione del framework europeo richiede coesione e una visione strategica di lungo periodo, non slogan populisti.",
+          "text": "La transizione ecologica deve essere inclusiva e sostenibile: questo è il nostro progetto paese per le prossime legislature.",
           "score": 50,
           "convoluted_phrases": []
         }
@@ -43,16 +45,17 @@
       "id": "M5S",
       "name": "MoVimento 5 Stelle",
       "color": "#F9A825",
-      "n_testi": 2,
+      "n_testi": 10,
+      "used_fallback": false,
       "radar": {
-        "Complessità Periodi": 50,
-        "Vuoto Semantico": 50,
-        "Indice di Fuffa": 50,
-        "Astrazione Concettuale": 50
+        "Complessità Periodi": 50.0,
+        "Vuoto Semantico": 50.0,
+        "Indice di Fuffa": 50.0,
+        "Astrazione Concettuale": 50.0
       },
       "top_samples": [
         {
-          "text": "Dopo un lavoro di ascolto diffuso su tutto il territorio nazionale, articolato in oltre 100 spazi di confronto e partecipazione, il percorso di Nova entra nella fase più avanzata e strategica.",
+          "text": "Un altro step del percorso “NOVA: parola all’Italia” si è concluso oggi: il confronto deliberativo. Un momento dedicato alla discussione e all’approfondimento di alcune delle proposte emerse dai territori che per rilevanza, per eterogeneità di posizioni e vedute e, non da ultimo, per la potenziale capacità di individuare soluzioni e strategie nuove per affrontarli, necessitavano [&#8230;] Un altro",
           "score": 50,
           "convoluted_phrases": []
         }
@@ -62,16 +65,17 @@
       "id": "Lega",
       "name": "Lega",
       "color": "#1B5E20",
-      "n_testi": 2,
+      "n_testi": 3,
+      "used_fallback": true,
       "radar": {
-        "Complessità Periodi": 50,
-        "Vuoto Semantico": 50,
-        "Indice di Fuffa": 50,
-        "Astrazione Concettuale": 50
+        "Complessità Periodi": 50.0,
+        "Vuoto Semantico": 50.0,
+        "Indice di Fuffa": 50.0,
+        "Astrazione Concettuale": 50.0
       },
       "top_samples": [
         {
-          "text": "Il green deal europeo è un framework ideologico che penalizza le imprese italiane: serve discontinuità e concretezza.",
+          "text": "La sicurezza è il primo driver del benessere sociale: servono risorse concrete e un cronoprogramma chiaro per le forze dell'ordine.",
           "score": 50,
           "convoluted_phrases": []
         }
@@ -81,16 +85,17 @@
       "id": "FI",
       "name": "Forza Italia",
       "color": "#1565C0",
-      "n_testi": 2,
+      "n_testi": 3,
+      "used_fallback": true,
       "radar": {
-        "Complessità Periodi": 50,
-        "Vuoto Semantico": 50,
-        "Indice di Fuffa": 50,
-        "Astrazione Concettuale": 50
+        "Complessità Periodi": 50.0,
+        "Vuoto Semantico": 50.0,
+        "Indice di Fuffa": 50.0,
+        "Astrazione Concettuale": 50.0
       },
       "top_samples": [
         {
-          "text": "La sfida della digitalizzazione richiede un cambio di passo: portare a terra l'innovazione tecnologica con concretezza e pragmatismo.",
+          "text": "La resilienza del sistema economico italiano dipende dalla capacità di fare rete tra pubblica amministrazione e settore privato.",
           "score": 50,
           "convoluted_phrases": []
         }
@@ -100,16 +105,17 @@
       "id": "AVS",
       "name": "Alleanza Verdi Sinistra",
       "color": "#2E7D32",
-      "n_testi": 2,
+      "n_testi": 3,
+      "used_fallback": true,
       "radar": {
-        "Complessità Periodi": 50,
-        "Vuoto Semantico": 50,
-        "Indice di Fuffa": 50,
-        "Astrazione Concettuale": 50
+        "Complessità Periodi": 50.0,
+        "Vuoto Semantico": 50.0,
+        "Indice di Fuffa": 50.0,
+        "Astrazione Concettuale": 50.0
       },
       "top_samples": [
         {
-          "text": "L'implementazione della transizione energetica richiede governance multilivello e ascolto del territorio, non solo sterili benchmark europei dettati dalla tecnocrazia.",
+          "text": "La transizione ecologica deve essere giusta e inclusiva: nessuno deve essere lasciato indietro nel percorso verso la sostenibilità.",
           "score": 50,
           "convoluted_phrases": []
         }
@@ -119,12 +125,13 @@
       "id": "Azione",
       "name": "Azione",
       "color": "#0288D1",
-      "n_testi": 1,
+      "n_testi": 2,
+      "used_fallback": true,
       "radar": {
-        "Complessità Periodi": 50,
-        "Vuoto Semantico": 50,
-        "Indice di Fuffa": 50,
-        "Astrazione Concettuale": 50
+        "Complessità Periodi": 50.0,
+        "Vuoto Semantico": 50.0,
+        "Indice di Fuffa": 50.0,
+        "Astrazione Concettuale": 50.0
       },
       "top_samples": [
         {
@@ -138,54 +145,17 @@
       "id": "IV",
       "name": "Italia Viva",
       "color": "#EF6C00",
-      "n_testi": 1,
+      "n_testi": 2,
+      "used_fallback": true,
       "radar": {
-        "Complessità Periodi": 50,
-        "Vuoto Semantico": 50,
-        "Indice di Fuffa": 50,
-        "Astrazione Concettuale": 50
+        "Complessità Periodi": 50.0,
+        "Vuoto Semantico": 50.0,
+        "Indice di Fuffa": 50.0,
+        "Astrazione Concettuale": 50.0
       },
       "top_samples": [
         {
           "text": "Il cronoprogramma del governo non è credibile: mettere a terra le riforme richiede concretezza esecutiva, non cabine di regia vuote create solo per accontentare le correnti.",
-          "score": 50,
-          "convoluted_phrases": []
-        }
-      ]
-    },
-    {
-      "id": "SI",
-      "name": "Sinistra Italiana",
-      "color": "#B71C1C",
-      "n_testi": 1,
-      "radar": {
-        "Complessità Periodi": 50,
-        "Vuoto Semantico": 50,
-        "Indice di Fuffa": 50,
-        "Astrazione Concettuale": 50
-      },
-      "top_samples": [
-        {
-          "text": "La transizione ecologica deve valorizzare il lavoro e la coesione sociale: non è accettabile una governance che non ascolti i lavoratori e le comunità territoriali marginalizzate.",
-          "score": 50,
-          "convoluted_phrases": []
-        }
-      ]
-    },
-    {
-      "id": "PiuEu",
-      "name": "Più Europa",
-      "color": "#512DA8",
-      "n_testi": 1,
-      "radar": {
-        "Complessità Periodi": 50,
-        "Vuoto Semantico": 50,
-        "Indice di Fuffa": 50,
-        "Astrazione Concettuale": 50
-      },
-      "top_samples": [
-        {
-          "text": "Solo attraverso un'integrazione europea più profonda possiamo affrontare le sfide globali: serve resilienza istituzionale e coesione strutturale tra tutti gli stakeholder europei.",
           "score": 50,
           "convoluted_phrases": []
         }
