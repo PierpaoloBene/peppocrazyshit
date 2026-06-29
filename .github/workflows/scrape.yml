@@ -2,16 +2,16 @@ name: Aggiorna Supercazzola Index
 
 on:
   schedule:
-    # Ogni giorno a mezzanotte (ora italiana = UTC+1/2)
+    # Ogni giorno alle 22:00 UTC (mezzanotte italiana in estate)
     - cron: '0 22 * * *'
   workflow_dispatch:
-    # Permette di lanciare lo scraper manualmente dalla UI di GitHub
+    # Permette di lanciare la pipeline manualmente dalla UI di GitHub
 
 permissions:
   contents: write
 
 jobs:
-  scrape:
+  pipeline:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -21,16 +21,19 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: 'pip'
 
-      - name: Installa dipendenze Python
-        run: pip install feedparser requests
+      - name: Installa dipendenze
+        run: pip install -r scripts/requirements.txt
 
-      - name: Esegui lo scraper
-        run: python3 scripts/scrape_supercazzola.py
+      - name: Esegui pipeline (scraping RSS + valutazione Gemini)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/supercazzola_pipeline.py
 
       - name: Commit e push dei dati aggiornati
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "🤖 Aggiornamento automatico Supercazzola Index"
+          commit_message: "🤖 Supercazzola Index aggiornato [RSS + AI]"
           file_pattern: 'public/data/supercazzola_data.json'
           commit_author: "GitHub Actions <actions@github.com>"

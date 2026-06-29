@@ -1,10 +1,13 @@
-name: Update Supercazzola Data
+name: Update Supercazzola Data [DEPRECATO - usa scrape.yml]
 
+# Questo workflow è stato sostituito da scrape.yml (pipeline unificata).
+# I trigger sono stati rimossi per evitare esecuzioni duplicate.
 on:
-  schedule:
-    # Esegui ogni domenica a mezzanotte
-    - cron: '0 0 * * 0'
-  workflow_dispatch: # Permette di eseguirlo manualmente dal tab Actions
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Questo workflow è deprecato. Usa scrape.yml.'
+        required: false
 
 permissions:
   contents: write # Permette di fare il commit delle modifiche
