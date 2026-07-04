@@ -828,6 +828,11 @@ main {
 .peppolm-roadmap {
   padding: 1.5rem;
   margin-bottom: 2.5rem;
+  width: calc(100vw - 2rem);
+  max-width: 1200px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Timeline Layout */

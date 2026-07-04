@@ -774,7 +774,7 @@ function attachPeppoTooltip(el, desc, milestone) {
   el.addEventListener('mouseenter', (e) => {
     tip.innerHTML = `
       <div class="peppo-tip-desc">${desc}</div>
-      <div class="peppo-tip-milestone">🚩 ${milestone}</div>
+      ${milestone ? `<div class="peppo-tip-milestone">🚩 ${milestone}</div>` : ''}
     `;
     tip.classList.add('visible');
     positionPeppoTooltip(e);
