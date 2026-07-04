@@ -1,120 +1,195 @@
 {
-  "generated_at": "2026-06-27T10:00:00.000000",
+  "generated_at": "2026-06-28T02:04:28.674555",
   "parties": [
     {
       "id": "FdI",
       "name": "Fratelli d'Italia",
       "color": "#0D47A1",
-      "n_testi": 10,
-      "metrics": { "gulpease": 52.1, "complessita": 47.9, "buzzword_density": 25.0, "fuffa_index": 25.2, "avg_sentence_length": 17.0 },
-      "radar": { "Complessità Sintattica": 47.9, "Densità Buzzwords": 25.0, "Indice di Fuffa": 25.2, "Lunghezza Frasi": 56.7 },
+      "n_testi": 2,
+      "radar": {
+        "Complessità Periodi": 50,
+        "Vuoto Semantico": 50,
+        "Indice di Fuffa": 50,
+        "Astrazione Concettuale": 50
+      },
       "top_samples": [
-        { "text": "I dati preliminari Istat raccontano una realtà che per troppo tempo in molti hanno considerato impossibile: il Mezzogiorno registra una crescita del Pil dello 0,6% e guida il Paese anche sul fronte occupazionale.", "score": 59.7 }
+        {
+          "text": "I dati preliminari Istat raccontano una realtà che per troppo tempo in molti hanno considerato impossibile: il Mezzogiorno registra una crescita del Pil dello 0,6% e guida il Paese anche sul fronte occupazionale.",
+          "score": 50,
+          "convoluted_phrases": []
+        }
       ]
     },
     {
       "id": "PD",
       "name": "Partito Democratico",
       "color": "#E53935",
-      "n_testi": 5,
-      "metrics": { "gulpease": 47.5, "complessita": 52.5, "buzzword_density": 88.5, "fuffa_index": 70.5, "avg_sentence_length": 19.2 },
-      "radar": { "Complessità Sintattica": 52.5, "Densità Buzzwords": 88.5, "Indice di Fuffa": 70.5, "Lunghezza Frasi": 64.0 },
+      "n_testi": 2,
+      "radar": {
+        "Complessità Periodi": 50,
+        "Vuoto Semantico": 50,
+        "Indice di Fuffa": 50,
+        "Astrazione Concettuale": 50
+      },
       "top_samples": [
-        { "text": "L'implementazione del framework europeo richiede coesione e una visione strategica di lungo periodo, non slogan populisti.", "score": 154.5 },
-        { "text": "La transizione ecologica deve essere inclusiva e sostenibile: questo è il nostro progetto paese per le prossime legislature.", "score": 152.7 }
+        {
+          "text": "L'implementazione del framework europeo richiede coesione e una visione strategica di lungo periodo, non slogan populisti.",
+          "score": 50,
+          "convoluted_phrases": []
+        }
       ]
     },
     {
       "id": "M5S",
       "name": "MoVimento 5 Stelle",
       "color": "#F9A825",
-      "n_testi": 10,
-      "metrics": { "gulpease": 49.8, "complessita": 50.2, "buzzword_density": 26.4, "fuffa_index": 26.4, "avg_sentence_length": 17.6 },
-      "radar": { "Complessità Sintattica": 50.2, "Densità Buzzwords": 26.4, "Indice di Fuffa": 26.4, "Lunghezza Frasi": 58.7 },
+      "n_testi": 2,
+      "radar": {
+        "Complessità Periodi": 50,
+        "Vuoto Semantico": 50,
+        "Indice di Fuffa": 50,
+        "Astrazione Concettuale": 50
+      },
       "top_samples": [
-        { "text": "Dopo un lavoro di ascolto diffuso su tutto il territorio nazionale, articolato in oltre 100 spazi di confronto e partecipazione, il percorso di Nova entra nella fase più avanzata e strategica.", "score": 60.3 }
+        {
+          "text": "Dopo un lavoro di ascolto diffuso su tutto il territorio nazionale, articolato in oltre 100 spazi di confronto e partecipazione, il percorso di Nova entra nella fase più avanzata e strategica.",
+          "score": 50,
+          "convoluted_phrases": []
+        }
       ]
     },
     {
       "id": "Lega",
       "name": "Lega",
       "color": "#1B5E20",
-      "n_testi": 5,
-      "metrics": { "gulpease": 51.9, "complessita": 48.1, "buzzword_density": 72.2, "fuffa_index": 60.2, "avg_sentence_length": 19.4 },
-      "radar": { "Complessità Sintattica": 48.1, "Densità Buzzwords": 72.2, "Indice di Fuffa": 60.2, "Lunghezza Frasi": 64.7 },
+      "n_testi": 2,
+      "radar": {
+        "Complessità Periodi": 50,
+        "Vuoto Semantico": 50,
+        "Indice di Fuffa": 50,
+        "Astrazione Concettuale": 50
+      },
       "top_samples": [
-        { "text": "Il green deal europeo è un framework ideologico che penalizza le imprese italiane: serve discontinuità e concretezza.", "score": 139.8 },
-        { "text": "La transizione ecologica non può essere imposta dall'alto: serve un tavolo di confronto che ascolti la gente e le imprese.", "score": 139.5 }
+        {
+          "text": "Il green deal europeo è un framework ideologico che penalizza le imprese italiane: serve discontinuità e concretezza.",
+          "score": 50,
+          "convoluted_phrases": []
+        }
       ]
     },
     {
       "id": "FI",
       "name": "Forza Italia",
       "color": "#1565C0",
-      "n_testi": 5,
-      "metrics": { "gulpease": 48.7, "complessita": 51.3, "buzzword_density": 100.0, "fuffa_index": 75.7, "avg_sentence_length": 17.8 },
-      "radar": { "Complessità Sintattica": 51.3, "Densità Buzzwords": 100.0, "Indice di Fuffa": 75.7, "Lunghezza Frasi": 59.3 },
+      "n_testi": 2,
+      "radar": {
+        "Complessità Periodi": 50,
+        "Vuoto Semantico": 50,
+        "Indice di Fuffa": 50,
+        "Astrazione Concettuale": 50
+      },
       "top_samples": [
-        { "text": "La sfida della digitalizzazione richiede un cambio di passo: portare a terra l'innovazione tecnologica con concretezza.", "score": 152.8 },
-        { "text": "Serve una cabina di regia efficace per l'implementazione del PNRR, con governance chiara e stakeholder coinvolti.", "score": 149.2 }
+        {
+          "text": "La sfida della digitalizzazione richiede un cambio di passo: portare a terra l'innovazione tecnologica con concretezza e pragmatismo.",
+          "score": 50,
+          "convoluted_phrases": []
+        }
       ]
     },
     {
       "id": "AVS",
       "name": "Alleanza Verdi Sinistra",
       "color": "#2E7D32",
-      "n_testi": 5,
-      "metrics": { "gulpease": 42.7, "complessita": 57.3, "buzzword_density": 100.0, "fuffa_index": 78.7, "avg_sentence_length": 17.8 },
-      "radar": { "Complessità Sintattica": 57.3, "Densità Buzzwords": 100.0, "Indice di Fuffa": 78.7, "Lunghezza Frasi": 59.3 },
+      "n_testi": 2,
+      "radar": {
+        "Complessità Periodi": 50,
+        "Vuoto Semantico": 50,
+        "Indice di Fuffa": 50,
+        "Astrazione Concettuale": 50
+      },
       "top_samples": [
-        { "text": "L'implementazione della transizione energetica richiede governance multilivello e ascolto del territorio, non solo benchmark europei.", "score": 164.8 },
-        { "text": "La transizione ecologica deve essere giusta e inclusiva: nessuno deve essere lasciato indietro nel percorso verso la sostenibilità.", "score": 156.6 }
+        {
+          "text": "L'implementazione della transizione energetica richiede governance multilivello e ascolto del territorio, non solo sterili benchmark europei dettati dalla tecnocrazia.",
+          "score": 50,
+          "convoluted_phrases": []
+        }
       ]
     },
     {
       "id": "Azione",
       "name": "Azione",
       "color": "#0288D1",
-      "n_testi": 5,
-      "metrics": { "gulpease": 46.2, "complessita": 53.8, "buzzword_density": 82.0, "fuffa_index": 68.0, "avg_sentence_length": 20.1 },
-      "radar": { "Complessità Sintattica": 53.8, "Densità Buzzwords": 82.0, "Indice di Fuffa": 68.0, "Lunghezza Frasi": 67.0 },
+      "n_testi": 1,
+      "radar": {
+        "Complessità Periodi": 50,
+        "Vuoto Semantico": 50,
+        "Indice di Fuffa": 50,
+        "Astrazione Concettuale": 50
+      },
       "top_samples": [
-        { "text": "Serve un framework di riforma strutturale per riportare l'Italia ai livelli di competitività internazionale attraverso un cambio di passo nelle politiche industriali.", "score": 148.3 }
+        {
+          "text": "Serve un framework di riforma strutturale per riportare l'Italia ai livelli di competitività internazionale attraverso un cambio di passo nelle politiche industriali ed educative.",
+          "score": 50,
+          "convoluted_phrases": []
+        }
       ]
     },
     {
       "id": "IV",
       "name": "Italia Viva",
       "color": "#EF6C00",
-      "n_testi": 5,
-      "metrics": { "gulpease": 50.1, "complessita": 49.9, "buzzword_density": 65.0, "fuffa_index": 57.5, "avg_sentence_length": 18.3 },
-      "radar": { "Complessità Sintattica": 49.9, "Densità Buzzwords": 65.0, "Indice di Fuffa": 57.5, "Lunghezza Frasi": 61.0 },
+      "n_testi": 1,
+      "radar": {
+        "Complessità Periodi": 50,
+        "Vuoto Semantico": 50,
+        "Indice di Fuffa": 50,
+        "Astrazione Concettuale": 50
+      },
       "top_samples": [
-        { "text": "Il cronoprogramma del governo non è credibile: mettere a terra le riforme richiede concretezza, non cabine di regia vuote.", "score": 137.2 }
+        {
+          "text": "Il cronoprogramma del governo non è credibile: mettere a terra le riforme richiede concretezza esecutiva, non cabine di regia vuote create solo per accontentare le correnti.",
+          "score": 50,
+          "convoluted_phrases": []
+        }
       ]
     },
     {
       "id": "SI",
       "name": "Sinistra Italiana",
       "color": "#B71C1C",
-      "n_testi": 5,
-      "metrics": { "gulpease": 44.3, "complessita": 55.7, "buzzword_density": 78.0, "fuffa_index": 66.9, "avg_sentence_length": 21.5 },
-      "radar": { "Complessità Sintattica": 55.7, "Densità Buzzwords": 78.0, "Indice di Fuffa": 66.9, "Lunghezza Frasi": 71.7 },
+      "n_testi": 1,
+      "radar": {
+        "Complessità Periodi": 50,
+        "Vuoto Semantico": 50,
+        "Indice di Fuffa": 50,
+        "Astrazione Concettuale": 50
+      },
       "top_samples": [
-        { "text": "La transizione ecologica deve valorizzare il lavoro e la coesione sociale: non è accettabile una governance che non ascolti i lavoratori e le comunità territoriali.", "score": 151.0 }
+        {
+          "text": "La transizione ecologica deve valorizzare il lavoro e la coesione sociale: non è accettabile una governance che non ascolti i lavoratori e le comunità territoriali marginalizzate.",
+          "score": 50,
+          "convoluted_phrases": []
+        }
       ]
     },
     {
       "id": "PiuEu",
       "name": "Più Europa",
       "color": "#512DA8",
-      "n_testi": 5,
-      "metrics": { "gulpease": 45.9, "complessita": 54.1, "buzzword_density": 91.0, "fuffa_index": 72.6, "avg_sentence_length": 22.0 },
-      "radar": { "Complessità Sintattica": 54.1, "Densità Buzzwords": 91.0, "Indice di Fuffa": 72.6, "Lunghezza Frasi": 73.3 },
+      "n_testi": 1,
+      "radar": {
+        "Complessità Periodi": 50,
+        "Vuoto Semantico": 50,
+        "Indice di Fuffa": 50,
+        "Astrazione Concettuale": 50
+      },
       "top_samples": [
-        { "text": "Solo attraverso un'integrazione europea più profonda possiamo affrontare le sfide globali: serve resilienza istituzionale e coesione tra gli stakeholder europei.", "score": 162.4 }
+        {
+          "text": "Solo attraverso un'integrazione europea più profonda possiamo affrontare le sfide globali: serve resilienza istituzionale e coesione strutturale tra tutti gli stakeholder europei.",
+          "score": 50,
+          "convoluted_phrases": []
+        }
       ]
     }
-  ],
-  "buzzwords_count": 67
+  ]
 }

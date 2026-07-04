@@ -21,6 +21,7 @@ const CARDS = [
     title: 'SuperCazzola\nIndex (WIP)',
     bg: '#FF595E',
     page: 'supercazzola',
+    disabled: true,
   },
   {
     id: 'whashabit',
@@ -86,10 +87,16 @@ function renderCards() {
 
   CARDS.forEach(card => {
     const el = document.createElement('article');
-    el.className = 'dashboard-card';
+    el.className = 'dashboard-card' + (card.disabled ? ' card-disabled' : '');
     el.setAttribute('role', 'listitem');
-    el.setAttribute('tabindex', '0');
-    el.setAttribute('aria-label', `Go to: ${card.title.replace('\n', ' ')}`);
+
+    if (!card.disabled) {
+      el.setAttribute('tabindex', '0');
+      el.setAttribute('aria-label', `Go to: ${card.title.replace('\n', ' ')}`);
+    } else {
+      el.setAttribute('aria-disabled', 'true');
+      el.setAttribute('aria-label', `${card.title.replace('\n', ' ')} — prossimamente`);
+    }
 
     // Title may contain a newline — split into two lines
     const titleParts = card.title.split('\n');
@@ -98,15 +105,18 @@ function renderCards() {
     el.innerHTML = `
       <div class="card-color-area" style="background-color: ${card.bg}">
         <div class="card-big-title">${titleHTML}</div>
+        ${card.disabled ? '<div class="card-soon-badge">Prossimamente</div>' : ''}
       </div>
     `;
 
-    const navigate = () => {
-      showPage(card.page);
-      loadPageData(card.page);
-    };
-    el.addEventListener('click', navigate);
-    el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navigate(); } });
+    if (!card.disabled) {
+      const navigate = () => {
+        showPage(card.page);
+        loadPageData(card.page);
+      };
+      el.addEventListener('click', navigate);
+      el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navigate(); } });
+    }
 
     grid.appendChild(el);
   });

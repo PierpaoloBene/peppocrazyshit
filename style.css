@@ -121,16 +121,39 @@ main {
 .dashboard-card:hover { transform: translateY(-5px) rotate(-0.3deg); box-shadow: var(--shadow-hover); }
 .dashboard-card:focus-visible { outline: 3px solid var(--border-dark); outline-offset: 3px; }
 
+/* ── Disabled card (not yet available) ── */
+.card-disabled {
+  cursor: default;
+  opacity: 0.55;
+  pointer-events: none;
+}
+.card-disabled:hover { transform: none; box-shadow: none; }
+
 .card-color-area {
   width: 100%;
   aspect-ratio: 5 / 3;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.6rem;
   padding: 1.5rem;
   transition: filter var(--transition-fast);
 }
 .dashboard-card:hover .card-color-area { filter: brightness(1.06); }
+
+.card-soon-badge {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 999px;
+  padding: 0.2em 0.75em;
+}
 
 .card-big-title {
   font-family: var(--font-display);
