@@ -43,6 +43,12 @@ const WORKING_ON_CARDS = [
     title: 'Casetta',
     bg: '#F4A261',
     page: 'casetta',
+  },
+  {
+    id: 'peppolm',
+    title: 'PeppoLM',
+    bg: '#2B2D42',
+    page: 'peppolm',
   }
 ];
 
@@ -138,7 +144,7 @@ function renderCards() {
 
 // ─── BACK BUTTONS ───
 function setupNavigation() {
-  ['supercazzola', 'whashabit', 'pil', 'casetta'].forEach(page => {
+  ['supercazzola', 'whashabit', 'pil', 'casetta', 'peppolm'].forEach(page => {
     const btn = $(`#back-${page}`);
     if (btn) btn.addEventListener('click', () => showPage('home'));
   });
@@ -695,9 +701,101 @@ function init() {
   renderCards();
   setupNavigation();
   initVisitorCounter();
+  setupPeppoLM();
 
   // Ensure home page is active on load
   showPage('home');
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+// ═══════════════════════════════════════════════════════════════
+// ── PEPPOLM ──
+// ═══════════════════════════════════════════════════════════════
+
+function setupPeppoLM() {
+  // 1. Tooltips
+  const tips = $$('.has-peppo-tip');
+  tips.forEach(el => {
+    attachPeppoTooltip(el, el.getAttribute('data-desc'), el.getAttribute('data-milestone'));
+  });
+
+  // 2. Checkboxes and LocalStorage
+  const checkboxes = $$('.check-dot');
+  
+  // Read saved state
+  let savedState = {};
+  try {
+    const raw = localStorage.getItem('peppolm_progress');
+    if (raw) savedState = JSON.parse(raw);
+  } catch (e) {
+    console.error("Error reading localStorage", e);
+  }
+
+  checkboxes.forEach(btn => {
+    const id = btn.getAttribute('data-id');
+    const parent = btn.closest('.sub-objective');
+    
+    // Apply saved state
+    if (savedState[id]) {
+      btn.classList.add('checked');
+      if (parent) parent.classList.add('completed');
+    }
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent tooltip weirdness
+      const isChecked = btn.classList.toggle('checked');
+      if (parent) parent.classList.toggle('completed', isChecked);
+      
+      savedState[id] = isChecked;
+      try {
+        localStorage.setItem('peppolm_progress', JSON.stringify(savedState));
+      } catch (err) {
+        console.error("Error saving localStorage", err);
+      }
+    });
+  });
+}
+
+// ─── PeppoLM Tooltip Singleton ───
+let _peppoTooltip = null;
+function getPeppoTooltip() {
+  if (!_peppoTooltip) {
+    _peppoTooltip = document.createElement('div');
+    _peppoTooltip.className = 'peppo-tooltip';
+    _peppoTooltip.setAttribute('role', 'tooltip');
+    document.body.appendChild(_peppoTooltip);
+  }
+  return _peppoTooltip;
+}
+
+function attachPeppoTooltip(el, desc, milestone) {
+  const tip = getPeppoTooltip();
+  el.addEventListener('mouseenter', (e) => {
+    tip.innerHTML = `
+      <div class="peppo-tip-desc">${desc}</div>
+      <div class="peppo-tip-milestone">🚩 ${milestone}</div>
+    `;
+    tip.classList.add('visible');
+    positionPeppoTooltip(e);
+  });
+  el.addEventListener('mousemove', positionPeppoTooltip);
+  el.addEventListener('mouseleave', () => {
+    tip.classList.remove('visible');
+  });
+}
+
+function positionPeppoTooltip(e) {
+  const tip = getPeppoTooltip();
+  const GAP = 12;
+  const tw = tip.offsetWidth;
+  const th = tip.offsetHeight;
+  let x = e.clientX + GAP;
+  let y = e.clientY - th / 2;
+  // Keep within viewport
+  if (x + tw > window.innerWidth - 8) x = e.clientX - tw - GAP;
+  if (y < 8) y = 8;
+  if (y + th > window.innerHeight - 8) y = window.innerHeight - th - 8;
+  tip.style.left = x + 'px';
+  tip.style.top  = y + 'px';
+}
