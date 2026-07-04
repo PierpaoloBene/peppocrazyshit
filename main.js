@@ -709,29 +709,14 @@ function setupCasettaAuth() {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const email = $('#casetta-email').value;
     const password = $('#casetta-password').value;
     
     errorEl.textContent = '';
-    submitBtn.textContent = 'Verifica in corso...';
-    submitBtn.style.opacity = '0.7';
     
-    try {
-      const res = await fetch('https://hesnqlggsncmkzpsndcq.supabase.co/auth/v1/token?grant_type=password', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhlc25xbGdnc25jbWt6cHNuZGNxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI4Mjg0OTcsImV4cCI6MjA5ODQwNDQ5N30.iRYGAuwemsgyaviu4cJSeedq0Ujh5ZQrklbe8oHELWw'
-        },
-        body: JSON.stringify({ email, password })
-      });
-      
-      const data = await res.json();
-      
-      if (!res.ok) {
-        throw new Error(data.error_description || data.msg || 'Credenziali non valide');
-      }
-      
+    // Validazione locale (offuscata in base64).
+    // Attualmente verifica la password "peppo2026" (cGVwcG8yMDI2)
+    // Sostituiremo il base64 appena mi dirai la password definitiva.
+    if (btoa(password) === 'cGVwcG8yMDI2') {
       // Success! Decodifica l'URL
       const appUrl = atob('aHR0cHM6Ly9waWVycGFvbG9iZW5lLmdpdGh1Yi5pby9DYXNldHRhX3dlYl9hcHAv');
       
@@ -744,11 +729,8 @@ function setupCasettaAuth() {
       
       // Aggiungi il link nella topbar
       topbarLinkContainer.innerHTML = `<a href="${appUrl}" target="_blank" rel="noopener" class="page-updated source-topbar-link">Apri in nuova scheda ↗</a>`;
-      
-    } catch (err) {
-      errorEl.textContent = err.message;
-      submitBtn.textContent = 'Accedi';
-      submitBtn.style.opacity = '1';
+    } else {
+      errorEl.textContent = 'Password errata';
     }
   });
 }

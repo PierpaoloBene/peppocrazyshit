@@ -7,8 +7,8 @@
   <title>Peppo Crazy Shit</title>
   <meta name="description"
     content="Dati inutili. Analisi serie. Dashboard e infografiche su cose che nessuno ha chiesto ma tutti meritano." />
-  <script type="module" crossorigin src="/peppocrazyshit/assets/index-2agkOKjI.js"></script>
-  <link rel="stylesheet" crossorigin href="/peppocrazyshit/assets/index-DtZzqmvz.css">
+  <script type="module" crossorigin src="/peppocrazyshit/assets/index-DbzrCCsL.js"></script>
+  <link rel="stylesheet" crossorigin href="/peppocrazyshit/assets/index-BWkwy4Z-.css">
 </head>
 
 <body>
@@ -20,6 +20,9 @@
       <div class="home-layout">
         <h1 id="home-heading" class="site-title">Peppo Crazy Shit</h1>
         <div id="card-grid" class="card-grid" role="list"></div>
+
+        <h2 class="site-title" style="margin-top: 4rem; font-size: 2rem;">Currently working On</h2>
+        <div id="working-on-grid" class="card-grid" role="list"></div>
       </div>
     </section>
 
@@ -106,7 +109,9 @@
         <button class="back-btn" id="back-pil" aria-label="Torna alla home">
           <span>←</span> Home
         </button>
-        <a href="https://www.rgs.mef.gov.it/VERSIONE-I/attivita_istituzionali/formazione_e_gestione_del_bilancio/bilancio_di_previsione/index.html" target="_blank" rel="noopener" class="page-updated source-topbar-link">Fonte: RGS/MEF — Bilancio di Previsione 2025 ↗</a>
+        <a href="https://www.rgs.mef.gov.it/VERSIONE-I/attivita_istituzionali/formazione_e_gestione_del_bilancio/bilancio_di_previsione/index.html"
+          target="_blank" rel="noopener" class="page-updated source-topbar-link">Fonte: RGS/MEF — Bilancio di Previsione
+          2025 ↗</a>
       </div>
 
       <div class="page-hero">
@@ -152,6 +157,159 @@
 
       </div>
 
+    </section>
+
+    <!-- ══ CASETTA PAGE ══ -->
+    <section id="page-casetta" class="page page-casetta" aria-labelledby="casetta-heading" hidden>
+      <div class="page-topbar">
+        <button class="back-btn" id="back-casetta" aria-label="Torna alla home">
+          <span>←</span> Home
+        </button>
+        <span id="casetta-topbar-link-container"></span>
+      </div>
+
+      <div id="casetta-login-container" style="display: flex; justify-content: center; align-items: center; height: calc(100vh - 80px);">
+        <form id="casetta-login-form" class="glass-card" style="padding: 2rem; width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 1rem;">
+          <h2 class="chart-title" style="margin-bottom: 0.5rem; text-align: center;">Accesso Riservato</h2>
+          <p style="text-align: center; color: #aaa; margin-top: -10px; margin-bottom: 1rem; font-size: 0.9rem;">Accedi col tuo account Casetta</p>
+          
+          <input type="email" id="casetta-email" placeholder="Email" required style="padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: #fff; font-family: inherit; font-size: 1rem;" />
+          <input type="password" id="casetta-password" placeholder="Password" required style="padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: #fff; font-family: inherit; font-size: 1rem;" />
+          
+          <button type="submit" id="casetta-submit-btn" style="margin-top: 10px; padding: 12px; border-radius: 8px; border: none; background: #F4A261; color: #111; font-weight: bold; font-size: 1rem; cursor: pointer; transition: opacity 0.2s;">Accedi</button>
+          
+          <div id="casetta-login-error" style="color: #FF595E; font-size: 0.85rem; text-align: center; min-height: 20px;"></div>
+        </form>
+      </div>
+
+      <div id="casetta-app-container" style="display: none; width: 100%; height: calc(100vh - 80px); margin-top: 20px; border-radius: 12px; overflow: hidden; background: #000;">
+      </div>
+    </section>
+
+    <!-- ══ PEPPOLM PAGE ══ -->
+    <section id="page-peppolm" class="page page-peppolm" aria-labelledby="peppolm-heading" hidden>
+
+      <div class="page-topbar">
+        <button class="back-btn" id="back-peppolm" aria-label="Torna alla home">
+          <span>←</span> Home
+        </button>
+        <span class="page-updated">Roadmap</span>
+      </div>
+
+      <div class="page-hero">
+        <h1 id="peppolm-heading" class="page-title">
+          <span class="page-title-accent">Talk To Peppo</span>
+        </h1>
+        <p class="page-desc" style="max-width: 900px;">Attualmente sto lavorando allo sviluppo di un LLM (Large Language
+          Model) in italiano addestrato interamente sulle mie chat di WhatsApp. Non so se lo metterò online, potrebbe
+          contenere password e nudini. Ma vediamo che piega prende</p>
+      </div>
+
+      <div class="peppolm-roadmap glass-card">
+        <h2 class="chart-title">Roadmap di Sviluppo</h2>
+
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+
+          <!-- Sprint 1 -->
+          <div class="sprint-node">
+            <div class="sprint-header has-peppo-tip"
+              data-milestone="File model.py funzionante e tokenizer.json pronto a codificare e decodificare."
+              data-desc="Studio del materiale di Karpathy e del sorgente in locale. Scrittura di uno script per addestrare un tokenizer BPE su un testo in italiano.">
+              <span class="sprint-num">Sprint 1</span>
+              <span class="sprint-title">L'Architettura e il Tokenizer</span>
+              <span class="sprint-time">Settimane 1-2</span>
+            </div>
+            <div class="sprint-subs">
+              <div class="sub-objective has-peppo-tip"
+                data-desc="Studio del codice e replica dell'architettura di Karpathy in locale.">
+                <button class="check-dot" aria-label="Segna completato" data-id="p_s1_sub1"></button>
+                <span class="sub-text">Studio materiale di Karpathy</span>
+              </div>
+              <div class="sub-objective has-peppo-tip"
+                data-desc="Scrittura di uno script per addestrare un tokenizer BPE su un testo.">
+                <button class="check-dot" aria-label="Segna completato" data-id="p_s1_sub2"></button>
+                <span class="sub-text">Script Tokenizer</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sprint 2 -->
+          <div class="sprint-node">
+            <div class="sprint-header has-peppo-tip"
+              data-milestone="Dataset convertito in formato binario e primo run di test avviato con successo in cloud."
+              data-desc="Selezione e tokenizzazione di un dataset ridotto (es. Wikipedia Italia o TinyStories). Configurazione dell'ambiente GPU in cloud su RunPod o Lambda Labs e test degli script.">
+              <span class="sprint-num">Sprint 2</span>
+              <span class="sprint-title">Il Dataset e il Setup Cloud</span>
+              <span class="sprint-time">Settimane 3-4</span>
+            </div>
+            <div class="sprint-subs">
+              <div class="sub-objective has-peppo-tip"
+                data-desc="Selezione e tokenizzazione di un dataset ridotto (es. Wikipedia Italia o TinyStories).">
+                <button class="check-dot" aria-label="Segna completato" data-id="p_s2_sub1"></button>
+                <span class="sub-text">Selezione Dataset</span>
+              </div>
+              <div class="sub-objective has-peppo-tip"
+                data-desc="Configurazione dell'ambiente GPU in cloud su RunPod o Lambda Labs e test degli script.">
+                <button class="check-dot" aria-label="Segna completato" data-id="p_s2_sub2"></button>
+                <span class="sub-text">Setup Ambiente Cloud</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sprint 3 -->
+          <div class="sprint-node">
+            <div class="sprint-header has-peppo-tip"
+              data-milestone="Modello LLM &quot;Base&quot; nativo funzionante capace di generare testo coerente."
+              data-desc="Configurazione dei parametri di rete per un modello leggero da 15-30 milioni di parametri. Esecuzione del pre-training in cloud monitorando l'andamento della Loss. Trasferimento dei pesi in locale su Mac M2 e test di inferenza base per il completamento di frasi in italiano.">
+              <span class="sprint-num">Sprint 3</span>
+              <span class="sprint-title">Pre-Training</span>
+              <span class="sprint-time">Settimane 5-6</span>
+            </div>
+            <div class="sprint-subs">
+              <div class="sub-objective has-peppo-tip"
+                data-desc="Configurazione dei parametri di rete per un modello leggero da 15-30 milioni di parametri.">
+                <button class="check-dot" aria-label="Segna completato" data-id="p_s3_sub1"></button>
+                <span class="sub-text">Configurazione Rete (15-30M)</span>
+              </div>
+              <div class="sub-objective has-peppo-tip"
+                data-desc="Esecuzione del pre-training in cloud monitorando l'andamento della Loss.">
+                <button class="check-dot" aria-label="Segna completato" data-id="p_s3_sub2"></button>
+                <span class="sub-text">Esecuzione Pre-Training</span>
+              </div>
+              <div class="sub-objective has-peppo-tip"
+                data-desc="Trasferimento dei pesi in locale su Mac M2 Pro e test di inferenza base per il completamento di frasi in italiano.">
+                <button class="check-dot" aria-label="Segna completato" data-id="p_s3_sub3"></button>
+                <span class="sub-text">Test Inferenza sul mio Mac</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sprint 4 -->
+          <div class="sprint-node">
+            <div class="sprint-header has-peppo-tip"
+              data-milestone="Modello finale in grado di rispondere simulando lo stile di messaggistica e gli intercalari personali."
+              data-desc="Esportazione e pulizia strutturata dei log di chat di WhatsApp, formattando i messaggi in coppie di prompt utente/assistente. Esecuzione del ciclo di addestramento finale (Supervised Fine-Tuning) sui dati delle chat.">
+              <span class="sprint-num">Sprint 4</span>
+              <span class="sprint-title">WhatsApp e Fine-Tuning</span>
+              <span class="sprint-time">Settimane 7-8</span>
+            </div>
+            <div class="sprint-subs">
+              <div class="sub-objective has-peppo-tip"
+                data-desc="Esportazione e pulizia dei log di chat di WhatsApp, formattando i messaggi in coppie di prompt utente/assistente, l'assistente sono Iooo">
+                <button class="check-dot" aria-label="Segna completato" data-id="p_s4_sub1"></button>
+                <span class="sub-text">Estrazione e formattazione log WhatsApp</span>
+              </div>
+              <div class="sub-objective has-peppo-tip"
+                data-desc="Esecuzione del ciclo di addestramento finale (Supervised Fine-Tuning) sui dati delle chat.">
+                <button class="check-dot" aria-label="Segna completato" data-id="p_s4_sub2"></button>
+                <span class="sub-text">Fine-Tuning (SFT)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
 
     </section>
 
