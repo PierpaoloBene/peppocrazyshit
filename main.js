@@ -37,6 +37,15 @@ const CARDS = [
   },
 ];
 
+const WORKING_ON_CARDS = [
+  {
+    id: 'casetta',
+    title: 'Casetta',
+    bg: '#F4A261',
+    page: 'casetta',
+  }
+];
+
 // ─── DOM UTILS ───
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
@@ -81,50 +90,55 @@ async function initVisitorCounter() {
 }
 
 // ─── LANDING PAGE CARDS ───
+function renderCardToGrid(card, grid) {
+  const el = document.createElement('article');
+  el.className = 'dashboard-card' + (card.disabled ? ' card-disabled' : '');
+  el.setAttribute('role', 'listitem');
+
+  if (!card.disabled) {
+    el.setAttribute('tabindex', '0');
+    el.setAttribute('aria-label', `Go to: ${card.title.replace('\n', ' ')}`);
+  } else {
+    el.setAttribute('aria-disabled', 'true');
+    el.setAttribute('aria-label', `${card.title.replace('\n', ' ')} — prossimamente`);
+  }
+
+  const titleParts = card.title.split('\n');
+  const titleHTML = titleParts.map(p => `<span>${p}</span>`).join('<br />');
+
+  el.innerHTML = `
+    <div class="card-color-area" style="background-color: ${card.bg}">
+      <div class="card-big-title">${titleHTML}</div>
+      ${card.disabled ? '<div class="card-soon-badge">Prossimamente</div>' : ''}
+    </div>
+  `;
+
+  if (!card.disabled) {
+    const navigate = () => {
+      showPage(card.page);
+      loadPageData(card.page);
+    };
+    el.addEventListener('click', navigate);
+    el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navigate(); } });
+  }
+
+  grid.appendChild(el);
+}
+
 function renderCards() {
   const grid = $('#card-grid');
-  if (!grid) return;
-
-  CARDS.forEach(card => {
-    const el = document.createElement('article');
-    el.className = 'dashboard-card' + (card.disabled ? ' card-disabled' : '');
-    el.setAttribute('role', 'listitem');
-
-    if (!card.disabled) {
-      el.setAttribute('tabindex', '0');
-      el.setAttribute('aria-label', `Go to: ${card.title.replace('\n', ' ')}`);
-    } else {
-      el.setAttribute('aria-disabled', 'true');
-      el.setAttribute('aria-label', `${card.title.replace('\n', ' ')} — prossimamente`);
-    }
-
-    // Title may contain a newline — split into two lines
-    const titleParts = card.title.split('\n');
-    const titleHTML = titleParts.map(p => `<span>${p}</span>`).join('<br />');
-
-    el.innerHTML = `
-      <div class="card-color-area" style="background-color: ${card.bg}">
-        <div class="card-big-title">${titleHTML}</div>
-        ${card.disabled ? '<div class="card-soon-badge">Prossimamente</div>' : ''}
-      </div>
-    `;
-
-    if (!card.disabled) {
-      const navigate = () => {
-        showPage(card.page);
-        loadPageData(card.page);
-      };
-      el.addEventListener('click', navigate);
-      el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navigate(); } });
-    }
-
-    grid.appendChild(el);
-  });
+  if (grid) {
+    CARDS.forEach(card => renderCardToGrid(card, grid));
+  }
+  const workingGrid = $('#working-on-grid');
+  if (workingGrid) {
+    WORKING_ON_CARDS.forEach(card => renderCardToGrid(card, workingGrid));
+  }
 }
 
 // ─── BACK BUTTONS ───
 function setupNavigation() {
-  ['supercazzola', 'whashabit', 'pil'].forEach(page => {
+  ['supercazzola', 'whashabit', 'pil', 'casetta'].forEach(page => {
     const btn = $(`#back-${page}`);
     if (btn) btn.addEventListener('click', () => showPage('home'));
   });
