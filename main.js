@@ -45,10 +45,10 @@ const WORKING_ON_CARDS = [
     page: 'casetta',
   },
   {
-    id: 'peppolm',
-    title: 'PeppoLM',
+    id: 'prowl',
+    title: 'Prowl',
     bg: '#2B2D42',
-    page: 'peppolm',
+    page: 'prowl',
   }
 ];
 
@@ -144,7 +144,7 @@ function renderCards() {
 
 // ─── BACK BUTTONS ───
 function setupNavigation() {
-  ['supercazzola', 'whashabit', 'pil', 'casetta', 'peppolm'].forEach(page => {
+  ['supercazzola', 'whashabit', 'pil', 'casetta', 'prowl'].forEach(page => {
     const btn = $(`#back-${page}`);
     if (btn) btn.addEventListener('click', () => showPage('home'));
   });
@@ -742,7 +742,7 @@ function init() {
   renderCards();
   setupNavigation();
   initVisitorCounter();
-  setupPeppoLM();
+  setupProwl();
   setupCasettaAuth();
 
   // Ensure home page is active on load
@@ -752,10 +752,10 @@ function init() {
 document.addEventListener('DOMContentLoaded', init);
 
 // ═══════════════════════════════════════════════════════════════
-// ── PEPPOLM ──
+// ── PROWL ──
 // ═══════════════════════════════════════════════════════════════
 
-function setupPeppoLM() {
+function setupProwl() {
   // 1. Tooltips
   const tips = $$('.has-peppo-tip');
   tips.forEach(el => {
@@ -768,7 +768,7 @@ function setupPeppoLM() {
   // Read saved state
   let savedState = {};
   try {
-    const raw = localStorage.getItem('peppolm_progress');
+    const raw = localStorage.getItem('prowl_progress');
     if (raw) savedState = JSON.parse(raw);
   } catch (e) {
     console.error("Error reading localStorage", e);
@@ -791,7 +791,7 @@ function setupPeppoLM() {
       
       savedState[id] = isChecked;
       try {
-        localStorage.setItem('peppolm_progress', JSON.stringify(savedState));
+        localStorage.setItem('prowl_progress', JSON.stringify(savedState));
       } catch (err) {
         console.error("Error saving localStorage", err);
       }
@@ -799,7 +799,7 @@ function setupPeppoLM() {
   });
 }
 
-// ─── PeppoLM Tooltip Singleton ───
+// ─── Prowl Tooltip Singleton ───
 let _peppoTooltip = null;
 function getPeppoTooltip() {
   if (!_peppoTooltip) {
