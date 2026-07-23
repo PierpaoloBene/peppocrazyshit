@@ -39,12 +39,6 @@ const CARDS = [
 
 const WORKING_ON_CARDS = [
   {
-    id: 'casetta',
-    title: 'Casetta',
-    bg: '#F4A261',
-    page: 'casetta',
-  },
-  {
     id: 'prowl',
     title: 'Prowl',
     bg: '#2B2D42',
@@ -144,7 +138,7 @@ function renderCards() {
 
 // ─── BACK BUTTONS ───
 function setupNavigation() {
-  ['supercazzola', 'whashabit', 'pil', 'casetta', 'prowl'].forEach(page => {
+  ['supercazzola', 'whashabit', 'pil', 'prowl'].forEach(page => {
     const btn = $(`#back-${page}`);
     if (btn) btn.addEventListener('click', () => showPage('home'));
   });
@@ -695,47 +689,6 @@ function startPilTicker() {
 }
 
 // ═══════════════════════════════════════════════════════════════
-// ── CASETTA AUTH ──
-// ═══════════════════════════════════════════════════════════════
-function setupCasettaAuth() {
-  const form = $('#casetta-login-form');
-  const errorEl = $('#casetta-login-error');
-  const submitBtn = $('#casetta-submit-btn');
-  const loginContainer = $('#casetta-login-container');
-  const appContainer = $('#casetta-app-container');
-  const topbarLinkContainer = $('#casetta-topbar-link-container');
-  
-  if (!form) return;
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const password = $('#casetta-password').value;
-    
-    errorEl.textContent = '';
-    
-    // Validazione locale (offuscata in base64).
-    // Attualmente verifica la password "peppo2026" (cGVwcG8yMDI2)
-    // Sostituiremo il base64 appena mi dirai la password definitiva.
-    if (btoa(password) === 'cGVwcG8yMDI2') {
-      // Success! Decodifica l'URL
-      const appUrl = atob('aHR0cHM6Ly9waWVycGFvbG9iZW5lLmdpdGh1Yi5pby9DYXNldHRhX3dlYl9hcHAv');
-      
-      // Inietta l'iframe e mostra il container
-      appContainer.innerHTML = `<iframe src="${appUrl}" style="width: 100%; height: 100%; border: none;"></iframe>`;
-      appContainer.style.display = 'block';
-      
-      // Nascondi il form di login
-      loginContainer.style.display = 'none';
-      
-      // Aggiungi il link nella topbar
-      topbarLinkContainer.innerHTML = `<a href="${appUrl}" target="_blank" rel="noopener" class="page-updated source-topbar-link">Apri in nuova scheda ↗</a>`;
-    } else {
-      errorEl.textContent = 'Password errata';
-    }
-  });
-}
-
-// ═══════════════════════════════════════════════════════════════
 // ── INIT ──
 // ═══════════════════════════════════════════════════════════════
 function init() {
@@ -743,7 +696,6 @@ function init() {
   setupNavigation();
   initVisitorCounter();
   setupProwl();
-  setupCasettaAuth();
 
   // Ensure home page is active on load
   showPage('home');
