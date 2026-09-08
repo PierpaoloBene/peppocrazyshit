@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-06T23:42:16.074059",
+  "generated_at": "2026-09-08T00:08:14.608550",
   "parties": [
     {
       "id": "FdI",
       "name": "Fratelli d'Italia",
       "color": "#0D47A1",
-      "n_testi": 3,
-      "used_fallback": true,
+      "n_testi": 10,
+      "used_fallback": false,
       "radar": {
         "Complessità Periodi": 50.0,
         "Vuoto Semantico": 50.0,
@@ -15,7 +15,7 @@
       },
       "top_samples": [
         {
-          "text": "Il Governo sta lavorando con concretezza e determinazione per attuare il cronoprogramma previsto dalla legge di bilancio, valorizzando le risorse del PNRR in sinergia con gli enti locali.",
+          "text": "“Per quello che a breve sarà il governo più longevo della storia repubblicana i dati diffusi oggi dall’Istat sull’occupazione rappresentano l’ennesimo successo e conferma il buon lavoro svolto in questi 4 anni. I numeri certificano lo straordinario stato di salute del mercato del lavoro italiano, comprovando l&#8217;efficacia strutturale delle politiche economiche e occupazionali varate dal [&#823",
           "score": 50,
           "convoluted_phrases": []
         }
