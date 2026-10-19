@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T23:54:40.018513",
+  "generated_at": "2026-10-19T00:04:56.304934",
   "parties": [
     {
       "id": "FdI",
@@ -45,7 +45,7 @@
       "id": "M5S",
       "name": "MoVimento 5 Stelle",
       "color": "#F9A825",
-      "n_testi": 10,
+      "n_testi": 3,
       "used_fallback": false,
       "radar": {
         "Complessità Periodi": 50.0,
@@ -55,7 +55,7 @@
       },
       "top_samples": [
         {
-          "text": "Da Bruxelles un doppio riconoscimento che riempie d’orgoglio il Movimento 5 Stelle e l’Umbria intera. La nostra regione è stata premiata come “Regione Imprenditoriale Europea 2027” (EER) assegnato dal Comitato europeo delle regioni ai territori che si distinguono per strategie innovative, sostenibili e orientate alla crescita delle imprese. Successivamente, nel corso dei lavori della 173ª [&#8230;",
+          "text": "La gente non ne può più di questa politica! Dobbiamo fare sistema contro i privilegi e portare a terra le risorse del superbonus.",
           "score": 50,
           "convoluted_phrases": []
         }
