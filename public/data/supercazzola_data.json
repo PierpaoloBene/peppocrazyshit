@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T00:04:56.304934",
+  "generated_at": "2026-10-20T01:00:18.638368",
   "parties": [
     {
       "id": "FdI",
@@ -15,7 +15,7 @@
       },
       "top_samples": [
         {
-          "text": "&#8220;Il Ministero dell’Agricoltura, della Sovranità alimentare e delle Foreste mette in campo risorse concrete e risposte immediate per sostenere i territori colpiti dalla Xylella e rilanciare l&#8217;olivicoltura pugliese. Il ripristino del potenziale produttivo è una priorità fondamentale del governo Meloni: grazie all’impiego di tecnologie all’avanguardia e a procedure veloci e trasparenti, a",
+          "text": "&#8220;Ho grande rispetto per le migliaia di persone che oggi hanno manifestato pacificamente, anche partecipando alla mobilitazione indetta dalla Cgil che ha visto anche la partecipazione dei leader della sinistra. Qualunque siano le idee per le quali si manifesta, la partecipazione è alla base di qualunque sana democrazia. Dall’altro lato, però, non possiamo ignorare quanto [&#8230;] L'articolo ",
           "score": 50,
           "convoluted_phrases": []
         }
@@ -45,7 +45,7 @@
       "id": "M5S",
       "name": "MoVimento 5 Stelle",
       "color": "#F9A825",
-      "n_testi": 3,
+      "n_testi": 10,
       "used_fallback": false,
       "radar": {
         "Complessità Periodi": 50.0,
@@ -55,7 +55,7 @@
       },
       "top_samples": [
         {
-          "text": "La gente non ne può più di questa politica! Dobbiamo fare sistema contro i privilegi e portare a terra le risorse del superbonus.",
+          "text": "16, 17 e 18 ottobre 2026: tre giorni di partecipazione, confronto e condivisione che hanno segnato il tour di assemblee provinciali del Movimento 5 Stelle in Liguria. Da Lavagna a Genova, da Bordighera a Finale Ligure, fino alla Spezia. Cinque tappe, un unico grande obiettivo: rafforzare la nostra comunità, rilanciare la partecipazione e costruire insieme [&#8230;] 16, 17 e 18 ottobre 2026: tre gi",
           "score": 50,
           "convoluted_phrases": []
         }
