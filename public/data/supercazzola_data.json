@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-27T04:01:31.689383",
+  "generated_at": "2026-11-28T04:00:22.905970",
   "parties": [
     {
       "id": "FdI",
       "name": "Fratelli d'Italia",
       "color": "#0D47A1",
-      "n_testi": 10,
+      "n_testi": 3,
       "used_fallback": false,
       "radar": {
         "Complessità Periodi": 50.0,
@@ -15,7 +15,7 @@
       },
       "top_samples": [
         {
-          "text": "“Con l’approvazione del Dl Scuola, Fratelli d’Italia conferma il proprio impegno per un sistema scolastico che tuteli le famiglie, valorizzi il merito e riaffermi i principi fondanti della nostra società. Grazie anche al lavoro del ministro Valditara, diamo risposte concrete ai cittadini, dal risparmio sui libri di testo al rafforzamento dell’integrazione attraverso l’apprendimento della lingua [&",
+          "text": "Il Governo sta lavorando con concretezza e determinazione per attuare il cronoprogramma previsto dalla legge di bilancio, valorizzando le risorse del PNRR in sinergia con gli enti locali.",
           "score": 50,
           "convoluted_phrases": []
         }
@@ -55,7 +55,7 @@
       },
       "top_samples": [
         {
-          "text": "Quarantaduemila firme per chiedere alla Regione Toscana di modificare il regolamento che disciplina l&#8217;esclusione dei terreni privati dall&#8217;attività venatoria: sono quelle che, insieme alla Lega per l’abolizione della caccia, i consiglieri Luca Rossi Romanelli e Irene Galletti hanno consegnato direttamente nelle mani del Presidente Eugenio Giani. Il problema La normativa nazionale (157/1",
+          "text": "Chi vive nella Marsica lo sa bene. Una visita specialistica può voler dire mesi di attesa o decine di chilometri di strada. Ogni volta che un servizio si riduce, sono le famiglie a doversi organizzare: un permesso dal lavoro, un passaggio da chiedere, una spesa in più da mettere in conto. Ora guardiamo dove va [&#8230;] Il tour &#8220;La guerra la paghi tu&#8221; arriva nella Marsica: domenica 29 ",
           "score": 50,
           "convoluted_phrases": []
         }
